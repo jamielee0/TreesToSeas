@@ -100,7 +100,7 @@ def load_modmon_station(dataset_id, base=DEFAULT_BASE, start=None, end=None,
             url += "&" + quote(cons, safe="<>=:-")
         return requests.get(url, headers={"User-Agent": "trees-to-seas"}, timeout=timeout)
 
-    cols = ["time"] + cf_vars + ([f"{v}_qc_agg" for v in cf_vars] if apply_qc else [])
+    cols = ["time", "z"] + cf_vars + ([f"{v}_qc_agg" for v in cf_vars] if apply_qc else [])
     r = _fetch(cols)
     if r.status_code == 400:
         # this station doesn't expose every requested variable — keep only what it has
@@ -109,7 +109,8 @@ def load_modmon_station(dataset_id, base=DEFAULT_BASE, start=None, end=None,
         if not cf_list:
             raise ValueError(f"{dataset_id} exposes none of {cf_vars}")
         qc_list = [f"{v}_qc_agg" for v in cf_list if f"{v}_qc_agg" in avail] if apply_qc else []
-        r = _fetch(["time"] + cf_list + qc_list)
+        depth = ["z"] if "z" in avail else []
+        r = _fetch(["time"] + depth + cf_list + qc_list)
     if r.status_code == 404:
         raise ValueError(f"ERDDAP returned no data for {dataset_id} in that window.")
     r.raise_for_status()
@@ -120,6 +121,8 @@ def load_modmon_station(dataset_id, base=DEFAULT_BASE, start=None, end=None,
     out = pd.DataFrame()
     out["datetime"] = pd.to_datetime(raw["time"], errors="coerce", utc=True).dt.tz_localize(None)
     out["site"] = dataset_id
+    if "z" in raw.columns:
+        out["z"] = pd.to_numeric(raw["z"], errors="coerce")   # depth (m); separate surface vs bottom
     for cf, canon in CF_TO_CANONICAL.items():
         if cf in raw.columns:
             vals = pd.to_numeric(raw[cf], errors="coerce")
