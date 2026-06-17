@@ -1,0 +1,35 @@
+# Staged-pipeline configuration.
+# Mirrors the four-stage experiment progress manager of The AI Scientist
+# (Lu et al., Nature 2026). See docs/methodology.md for the full mapping.
+
+paths:
+  data_raw: data/raw
+  data_processed: data/processed
+  runs: runs
+
+# Stage transition criteria (the driver advances when these are met).
+stages:
+  s1_preliminary:
+    title: Preliminary investigation / viability
+    transition: "End-to-end pipeline runs with no errors AND a naive baseline metric is recorded."
+  s2_tuning:
+    title: Envelope tuning / calibration
+    transition: "Suitability-stress index beats the naive seasonal-temperature baseline at predicting held-out survivorship."
+    baseline_metric: spearman_abs
+  s3_execution:
+    title: Research execution
+    transition: "Full model run across all sites/strains/years complete; headline figures produced."
+  s4_ablation:
+    title: Ablation / sensitivity
+    transition: "Each driver dropped and each threshold perturbed; driver contributions ranked."
+
+# Habitat Suitability Index settings
+hsi:
+  combiner: geometric_mean        # 'geometric_mean' (any lethal factor -> 0) or 'liebig_min'
+  stress_threshold: 0.2           # HSI below this = stressed
+  stress_min_consecutive_days: 3  # consecutive stressed days to count as a stress EVENT
+
+# Automated-review gate (rule-based emulation of the paper's Automated Reviewer)
+review:
+  min_overall_to_pass: 3.0        # 1-5 scale; nodes below this are flagged 'revise'/'fail'
+  min_observations: 20            # below this, data_sufficiency is penalized

@@ -1,0 +1,68 @@
+# Data sources for the Trees to Seas engine.
+
+# ---------------------------------------------------------------------------
+# PRIMARY (in hand): Duke Bass Connections oyster team data ("Ty's GitHub")
+# Paired environmental drivers + oyster biological response (mortality, growth).
+# org: oystersdukebc
+# ---------------------------------------------------------------------------
+ty_oyster:
+  repo_2024_2025: https://github.com/oystersdukebc/gdp-dashboard-retry
+  repo_2025_2026: https://github.com/oystersdukebc/2025-2026-team-code
+  raw_base_2024_2025: https://raw.githubusercontent.com/oystersdukebc/gdp-dashboard-retry/main
+  raw_base_2025_2026: https://raw.githubusercontent.com/oystersdukebc/2025-2026-team-code/main
+  sites: [CMAST, DUML, Stump Sound, Ward Creek]
+  # 2024-2025 (CSV, repo: gdp-dashboard-retry/data/)
+  files_2024_2025:
+    env_cmast:            data/AverageCMASTtemp.csv          # Time,TempC,DOmgL,Location,Site,Date,RunningAvg,MaxTemp,MinTemp
+    env_duml:             data/AverageDUMLtemp.csv
+    env_long_daily:       data/environmental_data_daily.csv  # long: Measurement,rounded_time,date,Site,Type
+    env_long_hourly:      data/environmental_data_hourly.csv
+    env_long_5minute:     data/environmental_data_5minute.csv
+    mortality_continuous: data/MortalityContinuous.csv       # per-bag survivorship time series
+    mortality_processed:  data/OysterMortalityData_Processed.csv
+    mortality_binned:     data/MortalityBySiteBinned.csv      # survivorship by site/date (N, sd, se, ci)
+    growth_rates:         data/growth_rates.csv               # growth rate by strain/treatment/site
+  # 2025-2026 (XLSX, repo root: 2025-2026-team-code/)
+  files_2025_2026:
+    do_2024:        DOsensor_2024.xlsx        # DateTime, DomgL, Temp_C
+    ph_2024:        pH_2024.xlsx              # DateTime, pH
+    salinity_2024:  Salinity_2024.xlsx        # DateTime, Sal_ppt (conductivity-derived)
+    precip_2024:    Precip_2024.xlsx
+    precip_daily:   Precipdaily_2024.xlsx
+    # 2025 "Cleaned/" subfolder pattern: {SITE}_{DO|pH|Con}_Cleaned.xlsx
+    cleaned_pattern: "Cleaned/{site}_{var}_Cleaned.xlsx"
+
+# ---------------------------------------------------------------------------
+# GENERALIZATION targets (Neuse-Pamlico): environmental engine, no in-hand bio response yet
+# ---------------------------------------------------------------------------
+secoora_erddap:
+  base: https://erddap.secoora.org/erddap
+  # VERIFIED LIVE (June 2026): public, no login. QARTOD-flagged.
+  # Coverage: Neuse mid-river stations 1994-01-24 -> 2021-12-06; Pamlico Sound ~2000 -> 2021.
+  # Auto-discover all IDs at runtime: erddap.list_modmon_datasets()  (no need to hard-code)
+  discover_search_term: ModMon
+  # Verified reference stations on the Neuse mid-river axis (the proposal's anchors):
+  reference_stations:
+    modmon_120_marker_9:  neuse-river-at-marker-9-modmo    # ModMon 120 (AWS J9530000)
+    modmon_20_marker_52a: neuse-river-at-marker-52-a-mo    # ModMon 20  (AWS J8290000)
+    pamlico_ps1:          pamlico-sound-at-ps1-modmon-1    # Pamlico Sound PS1
+  # ERDDAP/CF variable -> canonical (units verified):
+  #   sea_water_temperature (degC), sea_water_practical_salinity (PSU),
+  #   mass_concentration_of_oxygen_in_sea_water (mg/L), sea_water_ph_reported_on_total_scale,
+  #   sea_water_turbidity (NTU), secchi_depth_of_sea_water, chlorophyll, nutrients.
+  example_query: "https://erddap.secoora.org/erddap/tabledap/neuse-river-at-marker-9-modmo.csv?time,sea_water_temperature,sea_water_practical_salinity,mass_concentration_of_oxygen_in_sea_water&time>=2010-06-01&time<=2010-09-30"
+
+usgs:
+  neuse_fort_barnwell: "02091814"   # discharge, continuous since Oct 1996 (freshwater forcing)
+
+noaa_coops:
+  beaufort_duml: "8656483"          # water temperature (NO salinity sensor at this station)
+
+# Variable name harmonization: map raw column names -> canonical names used by the model.
+canonical_vars:
+  temp_C:        [TempC, Temp_C, "Temperature (C)", "Water Temperature (C)", temperature, sea_water_temperature]
+  DO_mgL:        [DOmgL, DomgL, "Dissolved Oxygen (mg/L)", "DO (mg/L)", mass_concentration_of_oxygen_in_sea_water]
+  salinity_ppt:  [Sal_ppt, Salinity, "Salinity (ppt)", salinity, sea_water_practical_salinity]
+  pH:            [pH, "pH", sea_water_ph_reported_on_total_scale]
+  turbidity_NTU: [Turbidity, "Turbidity (NTU)", sea_water_turbidity]
+  precip_mm:     ["Precipitation Accumulation (mm)", precip, Precip]

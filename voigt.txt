@@ -1,0 +1,525 @@
+Fisheries Oceanography
+
+ORIGINAL ARTICLE OPEN ACCESS
+
+Long-T erm Trends in Juvenile Blue Crab Recruitment Patterns in a Wind-D riven Estuary
+Erin Voigt1,2,3 | Lisa Etherington1 | David Eggleston1,2
+1Department of Marine, Earth and Atmospheric Sciences, North Carolina State University, Raleigh, North Carolina, USA | 2Center for Marine Sciences and Technology, North Carolina State University, Morehead City, North Carolina, USA | 3Duke University Marine Laboratory, Nicholas School of the Environment, Duke University, Beaufort, North Carolina, USA
+Correspondence: Erin Voigt (epvoigt@gmail.com)
+Received: 3 April 2025 | Revised: 19 July 2025 | Accepted: 16 August 2025
+Funding: Funding was provided by North Carolina Sea Grant, North Carolina State University (R18-HCE-2), Southeastern Climate Adaptation Science Center, Albemarle-Pamlico National Estuarine Partnership (APNEP), Curtis and Edith Munson Foundation, North Carolina Division of Marine Fisheries (2017_H_063 & 2019_H_077), and the Center for Marine Sciences and Technology, NC State University.
+Keywords: exploited fishery | recruitment overfishing | seagrass | shallow detrital habitat | stock­recruit relationship
+ABSTRACT Conserving exploited marine species requires understanding population dynamics across life stages and habitats. This study analyzes juvenile blue crab (Callinectes sapidus) recruitment trends in North Carolina's Albemarle-Pamlico Estuarine System. Juvenile densities (2.2­20mm of carapace width) were compared across three nursery habitats, western shore Ruppia maritima seagrass beds (WSG), western shallow detrital habitats (SDH), and eastern mixed-species seagrass beds (ESG), during two periods: 1996­1999 (pre­fishery decline) and 2017­2019 (post-d ecline). WSG consistently supported higher juvenile densities than both ESG and SDH despite its ephemeral nature and distance from larval sources. Surprisingly, juvenile densities did not differ between time periods, suggesting that recruitment overfishing is unlikely. A weak stock­recruit relationship and no recruit-to-spawning stock link indicate a potential population bottleneck post-nursery but pre-maturity. Salinity significantly affected catch per unit effort, and spawning data revealed the importance of integrating environmental variability into fisheries assessments. These findings highlight the importance of conserving key nursery habitats and conducting further research into juvenile population dynamics for sustainable management.
+
+1|Introduction
+The conservation and management of exploited populations present significant challenges, due in part to the often-considerable natural variability in annual population sizes and the complex interplay of multiple driving factors among different life history stages (Rothschild 1986; Lorenzen 2005). Effective management of these populations necessitates a comprehensive understanding of interannual variation in key demographic parameters, such as population birth, death, immigration, and emigration rates, as well as the factors influencing variability within these parameters (Sutherland 2001 and references therein). This is
+
+particularly pertinent for marine species with complex life cycles that have a dispersed larval stage, which underscores the importance of understanding the interconnectivity between life stages and the factors influencing population variability at various scales in space and time.
+In species with complex life cycles, managers may rely on stock­ recruit relationships, which compare the number of new recruits to a system or population based on the number of spawning adults (Rothschild 1986; Hilborn and Walters 1992). This relationship is essential for understanding trends in density- dependent population regulation and plays a crucial role in
+
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited.
+© 2025 The Author(s). Fisheries Oceanography published by John Wiley & Sons Ltd.
+
+Fisheries Oceanography, 2025; 0:1­12
+
+1
+
+https://doi.org/10.1111/fog.70009
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+assessing the recruitment limitations of exploited populations (Sutherland 2001; Subbey et al. 2014 and references therein). In overexploited fisheries, recruitment overfishing often occurs when the spawning stock of a population has been depleted to the extent that there are insufficient adults to produce the required number of recruits to replenish the population (Hilborn and Walters 1992). Despite stock­recruitment relationships being a common proxy used for predicting future population numbers, assessing this relationship is often challenging because of the difficulties associated with measuring and correlating variability in recruit and adult populations and inadequate fisheries- independent survey data to do so (Cobb and Caddy 1989; Cardinale and Arrhenius 2000; Rothschild 2000; Subbey et al. 2014). The role of environmental variability in stock­recruit relationships underscores the importance of understanding the factors driving variability in both adult stock and recruit estimates.
+Like many marine invertebrates, Atlantic blue crabs, Callinectes sapidus, have a complex life cycle, resulting in considerable year-to-year variability due to environmental forcing interacting with fishing pressure (Roughgarden et al. 1988; Eggleston et al. 2004; Ogburn et al. 2012). Moreover, blue crabs are a key fisheries species and are frequently subjected to overexploitation across their range (Lipcius and Stockhausen 2002; NOAA Fisheries 2022; Perry et al. 2022). This holds true for the North Carolina population, which exhibited significant declines in juvenile and adult blue crab population size, along with reduced landings of hard blue crabs in the early 2000s to the present, leading to concerns about overfishing (North Carolina Division of Marine Fisheries 2018). The North Carolina blue crab population also serves as an ideal model species for studying the population dynamics of an exploited species because of uncertainties surrounding the accurate measurement of recruits and spawning stock, including the dependence of recruits on multiple spatially explicit nursery habitats and the influence of high riverine-to-oceanic inputs causing salinity variations that may alter the adult habitat range (North Carolina Division of Marine Fisheries 2018).
+In North Carolina, most of the blue crab population and fishery are centered in the Albemarle-Pamlico Estuarine System (APES), the largest lagoonal estuary system in the United States. This system is characterized by high levels of riverine input along the western shore and restricted oceanic input along the eastern shore, with oceanic mixing occurring through three narrow inlets on a barrier island chain known as the Outer Banks. Larval blue crabs (zoeae) are released by mature female crabs from these inlets during the late spring to early fall (Eggleston et al. 2009, 2010). Larvae progress through several molts in the Atlantic Ocean along the continental shelf before returning to the estuary through a combination of cross-shelf, wind-driven Ekman circulation (Epifanio and Garvine 2001) and storm- driven transport during fall (Eggleston et al. 2010). Once within the sound, megalopae settle in structurally complex nursery habitats before undergoing final metamorphosis into first-stage benthic instars (referred to as J1; all subsequent molting stages will be referred to as J2, J3, J4, etc.). The recruits in this study are the young juveniles in the J1­J10 stages, 2.2­20mm of carapace width (CW), after which juveniles undergo an ontogenetic shift to unstructured habitats (Pile et al. 1996; Etherington and Eggleston 2000).
+
+Within the APES, settlement and recruitment occur along both the eastern and western shores of Pamlico Sound (Etherington and Eggleston 2000, 2003). Recruitment to eastern habitats is driven primarily through wind-driven Ekman circulation, resulting in a pressure gradient that leads to increased inflow through inlets located in the northeastern portion of Pamlico Sound (Xie and Eggleston 1999; Eggleston et al. 2010). Megalopae will ingress through the inlets following this inflow and settle in the nearby seagrass beds before metamorphosing into benthic instars. In this scenario, eastern seagrass beds function as a "landing strip" for megalopae before undergoing further migration across Pamlico Sound as benthic instars (Etherington and Eggleston 2000, 2003). Cross-sound migration to western-shore habitats is driven by two different mechanisms: (i) storm-driven transport and (ii) density-d ependent secondary dispersal. In the absence of storms, blue crabs will settle initially in eastern seagrass beds before undergoing density-d riven secondary dispersal as instars to the western shore via a combination of tidal and wind- driven flow patterns (Blackmon and Eggleston 2001; Etherington and Eggleston 2000, 2003; Reyns and Eggleston 2004; Reyns et al. 2006, 2007). Hurricanes and tropical storms can modify this general recruitment pattern by dispersing megalopae past eastern seagrass locations, resulting in pronounced post­larval settlement along the western shore (Eggleston et al. 2010).
+Juvenile blue crabs inhabit three spatially explicit nursery habitats in the APES--mixed-species seagrass beds, Ruppia maritima seagrass beds, and shallow marsh detrital habitat (Etherington and Eggleston 2000, 2003; Voigt and Eggleston 2023). Mixed species seagrass beds (ESG) dominate the eastern shore of the APES and consist of large continuous patches of a combination of Zostera marina, Halodule wrightii, and R. maritima at depths up to 2m (Ferguson and Korfmacher 1997; Voigt and Eggleston 2023). Nursery habitats along the western shore of the APES consist of a combination of patchy and highly ephemeral R. maritima seagrass beds (WSG) in shallow (<1m deep) areas adjacent to salt marshes (Voigt and Eggleston 2023) and shallow detrital habitats (SDH). SDH is the more dominant habitat along the western shore and consists of compacted marsh peat material embedded with decaying marsh stems and rhizomes that form a 3-to 8-m-w ide band of habitat running parallel to wave-exposed erosional marsh habitats (Etherington and Eggleston 2003). Identification of the use of these estuarine habitats by early juvenile blue crabs is important in guiding the conservation and restoration efforts related to essential fish habitats (Beck et al. 2001; Dahlgren et al. 2006).
+The North Carolina blue crab fishery is an ideal example of an overexploited fishery to study because of the multiple factors that contributed to its decline and its lack of rebound despite protections being implemented. The fishery first began showing signs of decline in the early 2000s when spawning stock biomass (SSB), as calculated by the North Carolina Division of Marine Fisheries (see North Carolina Division of Marine Fisheries 2018), dropped below a fishery threshold level and is about 70% lower than the average prior to 2000 (Burkholder et al. 2004; Eggleston et al. 2004; North Carolina Division of Marine Fisheries 2018). This decline in the early 2000s followed a state-wide 370% increase in catch efficiency in the Fall of 1999, based on the average catch efficiency prior to 1999. This remarkable increase in catch efficiency is suspected to be a result of major flooding
+
+2
+
+Fisheries Oceanography, 2025
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+associated with three sequential hurricanes in 1999 (Floyd, Dennis, and Irene), which caused a marked drop in salinity in the upper part of the APES and caused blue crabs to migrate en masse down-estuary to higher-salinity environments, thereby resulting in a constricted habitat range (Burkholder et al. 2004; Eggleston et al. 2004). After the decrease in SSB, protective measures for fisheries were implemented, leading to an estimated 50% decrease in fishing pressure. With fishing accounting for approximately 80% of total annual blue crab mortality (North Carolina Division of Marine Fisheries 2018), these measures were expected to allow the stock numbers to recover, which has not occurred. The most likely explanation for the relatively stable, low population size of spawners, and the easiest alternative to test and eliminate compared with other possible mechanisms, is low recruitment, which is evaluated in this study.
+Therefore, the objectives of this study were to
+1. Compare and contrast the mean density of early juvenile blue crab recruits among three spatially explicit habitat types and from a period when blue crab spawning stock was relatively high (1996­1999) to a period when blue crab spawning stock was relatively low (2017­2019).
+2. Examine the effect of salinity on catch per unit effort of annual indices of blue crab spawning stock.
+3. Examine relationships between indices of annual blue crab spawning stock from fishery-independent surveys (after adjusting for salinity) and indices of early juvenile abundance.
+2|Methods
+2.1|Study Site
+The APES is characterized by a large basin that extends approximately 150km in length and 50km across at its widest, with a mean depth of 4.5m (Pietrafessa et al. 1986). Circulation within the APES is primarily wind-d riven, with tidal impacts
+
+only affecting areas within 10km of inlets (Pietrafesa and Janowitz 1991; Reyns et al. 2007). The wind patterns within the APES are seasonally variable, with winds originating from the south and southwest during the summer months and transitioning to the north and northeast in winter (Xie and Eggleston 1999). Juvenile blue crab nursery habitats include SDH and ephemeral and patchy beds of R. maritima (hereby Ruppia beds or WSG) located primarily along the western shore, whereas the eastern shore, along the sound side of the Outer Banks, is dominated by larger continuous mixed species of seagrass beds (hereby mixed seagrass beds or ESG). Thus, habitat type and region within Pamlico Sound are confounded.
+2.2|Distribution and Density of Early Juvenile Blue Crabs
+Juvenile blue crabs ranging in size from 2.2-to 20-m m CW were collected from four sites within the APES over 7years, covering a 23-year span (Table 1). Samples were collected in 1996­1999 and 2017­2019, representing time periods before versus after a steep decline in the North Carolina blue crab spawning stock (Eggleston et al. 2004; North Carolina Division of Marine Fisheries 2018). Sample collection occurred during the first quarter of the new moon to align with optimal conditions for post­ larval blue crab settlement and migration (Mense et al. 1995; Etherington and Eggleston 2000; Etherington et al. 2003; Eggleston et al. 2010). Samples were taken monthly during peak blue crab recruitment within the APES, which ranges from August through October (Etherington and Eggleston 2000, 2003; Reyns et al. 2007; Eggleston et al. 2010). Exceptions to this monthly sampling regime occurred in 2017 and 2018 when tropical storms, including Hurricane Florence, intervened with September sampling, resulting in only Manns Harbor being sampled in September of 2017 and Hatteras Inlet in September 2018 (Table 1); all sites were sampled in August and October of 2017 and 2018. Additionally, the 2019 sampling only took place in September (Table 1) since sampling in 2019 included additional research objectives (see Voigt and Eggleston 2023).
+
+TABLE 1|Summary of sample size by location, habitat type, and month. The number represents the total yearly sample size (n), and letters in parentheses denote the months that were sampled. A=August, S=September, and O=October. Habitats are western Ruppia maritima seagrass beds (WSG), shallow detrital habitat (SDH), and eastern mixed seagrass species beds (ESG). Sites are Engelhard (ENG) and Manns Harbor (MAN) in the west and Hatteras Inlet (HAT) and Oregon Inlet (ORG) in the east. Zero samples indicate that the habitat was not located at that site during that year.
+
+Year 1996 1997 1998
+
+ENG
+
+WSG
+
+SDH
+
+15 (A,S,O)
+
+12 (S,O)
+
+9 (A,S,O)
+
+12 (A,S,O)
+
+16 (A,S,O)
+
+10 (A,S,O)
+
+Sample size (n)+Sample month
+
+MAN
+
+WSG
+
+SDH
+
+5 (A,S)
+
+8 (S,O)
+
+10 (A,S,O)
+
+12 (A,S,O)
+
+14 (A,S,O)
+
+11 (A,S,O)
+
+HAT ESG 15 (A,S,O) 12 (A,S,O) 9 (A,S,O)
+
+ORG ESG 17 (A,S,O) 11 (A,S,O) 14 (A,S,O)
+
+1999
+
+0
+
+9 (A,S,O)
+
+8 (A,S)
+
+15 (A,S,O)
+
+10 (A,S,O)
+
+13 (A,S,O)
+
+2017
+
+0
+
+12 (A,O)
+
+9 (A,S,O)
+
+9 (A,S,O)
+
+12 (A,O)
+
+11 (A,O)
+
+2018
+
+0
+
+11 (A,O)
+
+0
+
+12 (A,O)
+
+18 (A,S,O)
+
+10 (A,O)
+
+2019
+
+0
+
+7 (S)
+
+3 (S)
+
+5 (S)
+
+6 (S)
+
+6 (S)
+
+3
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+In all years, two eastern sites were sampled, one immediately adjacent to Oregon Inlet (ORG) in the north and one immediately adjacent to Hatteras Inlet (HAT) in the south, and two western sites, Manns Harbor (MAN) in the north and Engelhard (ENG) in the south (Figure 1). These sites were chosen because of their importance as a major dispersal and settlement corridor for blue crabs, as well as being early juvenile sampling sites during the 1990s (Etherington and Eggleston 2000, 2003; Reyns et al. 2006, 2007). All samples taken at Oregon and Hatteras Inlets were from mixed-s pecies seagrass beds (Table 1). Samples taken along the western shore of the APES were in SDH and R. maritima beds when present, the latter of which occurred sporadically at both western sites (Table 1).
+For the period 1996­2018, juvenile blue crabs were collected using a suction dredge sampling within a 1.674-m2 cylindrical sampling ring (see Orth and Van Montfrans 1987), which was thrown haphazardly into the desired habitat. The outflow of the suction dredge was equipped with a 793.75-m mesh bag to capture organisms, whereas the estuarine bottom was sampled for 6min, which was the most optimal time, as no additional crabs were found in further sampling (Etherington and Eggleston 2000, 2003). Suction sampling has an 88% efficiency of sampling juvenile blue crabs in seagrass habitats (Pile et al. 1996). In 2019, the sampling methodology differed in order to test additional research objectives (see Voigt and Eggleston 2023); juvenile crabs were collected via a kick-net with a 500- m mesh and an opening size of 27.5cm by 47.5cm. The net was pulled over the top of the benthic substrate, whereas the scientists used their feet to disturb the habitat, dislodging the juvenile crabs and then entrapping them within the net. This procedure was performed for 6min within the same 1.674-m 2 sampling ring used during the suction sampling to standardize the sampling area (Voigt and Eggleston 2023). Gear efficiency was averaged across all size classes, since no difference was
+
+present, and compared between sampling methods, with kick- netting providing average crab densities that were approximately 32% and 36% of the suction dredge sampling averages for SDH and seagrass, respectively (see Voigt and Eggleston 2023). To account for these differences in gear type, all 2019 crab density measurements were multiplied to reach what would be expected via suction dredge sampling.
+Crab samples were then frozen and transported to the lab to be sorted, identified, enumerated as crabs per meter squared, and measured (mm CW). Because of the large amount of substrate collected in SDH samples, most samples required subsampling before sorting. Subsamples were taken by homogenizing the sample and then sorting a 1-L volume of substrate. If no crabs were found, this was repeated up to three times or until no crabs were found. If no crabs were found in three subsamples, the entire sample was considered to have no crabs; this only occurred once, and all other zero crab samples were fully sorted. Both sorted and unsorted substrates were then dried and weighed (g), and crab density was calculated based on the percentage dry weight of the sorted substrate compared to the dry weight of the total substrate. Crabs were then sorted to genus, enumerated, and measured. A subsample of the collected crabs found that Callinectes similis accounted for 11.6%±3.8% of the total Callinectes spp. population (E. Voigt and D. Eggleston, unpublished data), a proportion consistent with the 8.9%±2.5% recorded by the North Carolina Division of Marine Fisheries for the same species (North Carolina Division of Marine Fisheries, Pamlico Sound Trawl Survey Program 195). Both species were included in this analysis because they are treated indiscriminately by the fishery (J. Rock, North Carolina Division of Marine Fisheries, NC DMF, Pers. Comm.) and occupy similar ecological niches (Hsueh et al. 1993). From 1996 to 1999, crabs were measured with an ocular micrometer if the CW was <10mm and with calipers if >10mm (Etherington and
+
+FIGURE 1|Study locations within the Albemarle­Pamlico­Estuarine System (APES), in North Carolina, USA. Red circles mark the NC Division of Marine Fisheries (NC DMF) P195 survey locations for all September trawl surveys during the study period (1996­1999 and 2017­2019). Black squares represent the sampling locations for the instar density data along with the three-letter site abbreviation: Manns Harbor (MAN), Oregon Inlet (ORG), Hatteras Inlet (HAT), and Engelhard (ENG).
+
+4
+
+Fisheries Oceanography, 2025
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Eggleston 2000), whereas in 2017­2019, all crabs were photographed and measured digitally using Image J 1.53 image analysis software (Schneider et al. 2012). Crabs were then binned into size classes based on instar stage: first (J1) 2.2­3.0mm, second (J2) 3.1­4.2mm, third (J3) 4.3­5.9mm, fourth (J4) 6.0­7.4mm, fifth (J5) 7.5­9.1mm, sixth (J6) 9.2­10.6mm, seventh (J7) 10.7­ 12.6mm, eighth (J8) 12.7­14.1mm, and ninth (J9) 14.2­16.1mm (Pile et al. 1996; Etherington and Eggleston 2000). Early juvenile blue crabs in the APES undergo an ontogenetic habitat shift out of seagrass to adjacent unstructured habitats at sizes of >16.2- mm CW (Etherington and Eggleston 2000), which resulted in very few 16.2-to 20-m m CW (J10) crabs in the samples.
+2.3|Annual Blue Crab Spawning Stock Indices of Abundance
+Mature female crab abundance data, which served as a proxy for relative spawning stock abundance, were collected by the NC DMF's Pamlico Sound Trawl Survey Program 195 (P195). This fishery-independent trawl survey was initiated in 1987 as a deep-w ater (>2m) survey of adult blue crabs and other species in North Carolina. The gear used is a 9.1-m "Mongoose" trawl with a 1.9-c m cod-end. This is a stratified random sampling scheme based on area, with a total of 54 stations sampled in June and September each year. The spatial coverage of sampling is very comprehensive for Pamlico Sound and ranges geographically from the mouth of Albemarle Sound to the Southwest portion of Pamlico Sound, as well as the lower sections of the Neuse and Pamlico rivers (Figure 1). September values of mature female blue crab abundance (sorted to species) provide the best index of spawning stock abundance because they correspond in timing to annual peaks in ingress of blue crab megalopae during Fall (Eggleston et al. 2004, 2010; North Carolina Division of Marine Fisheries 2018). The P195 data used in this study span 1995­2022, covering the full NC DMF dataset and including all years we sampled juvenile recruitment.
+
+The raw catch-per-u nit-e ffort (CPUE) data from the P195 trawl survey were first corrected for biases in catch efficiency related to salinity before being used in analyses. For example, in years with relatively high salinity (lower rainfall), CPUE is biased low because of upriver expansion of blue crab habitat and reduction in crab abundance in the down-e stuary spatial domain of P195, whereas CPUE indices are biased high in years of higher rainfall (thus lower salinity) because of contraction of blue crab habitat from up-estuary to down-estuary and a greater concentration of crabs within the spatial domain of P195 (Eggleston et al. 2004; Burgess et al. 2007). To correct CPUE for salinity, we used the following equations:
+ei = yi - yi
+ci = ei + y
+ifmin(c) < 0, then xi = ci + (min(c) × - 1)
+ifmin(c)  0, then xi = ci
+whereby a linear regression analysis was performed to measure the relationship between female crab CPUE (y) and mean yearly bottom salinity recorded during the September trawls (Figure 2a). The resulting linear regression was then used to calculate a salinity predicted value (y) and residual values (e). The residual values were then added to the mean female crab CPUE value (y), resulting in a salinity corrected relative spawner abundance (ci). This correction resulted in negative values when the residual was larger than the expected crab index. To remedy this, all salinity-c orrected relative spawner abundance values (ci) were increased so that the minimum value was equal to zero. The resulting measurement (xi) was termed "relative spawner abundance" (Figure 2).
+Correcting for negative values resulted in slightly inflated spawning abundance; therefore, salinity-corrected values were analyzed relative to one another and not as quantitative measures of
+
+FIGURE 2|A comparison of the NC DMF Program 195 fishery-independent trawl survey index for September 1995­2022 mature female abundance with the raw data (black) and salinity corrected data (red) as relative spawner abundance in crabs per tow. (a) The relationship between relative spawner abundance and yearly average bottom salinity for both the raw (black circles) and salinity-c orrected data (red x's). Trendlines show the detrended effect of salinity (red dashed) compared with the (black line) raw data. The equation and R2 value are representative of the raw data. The raw P195 relative spawner abundance had a negative relationship with salinity (p=0.0074), but the salinity-corrected data were not (p=0.99). (b) The yearly mean abundance index over time between the raw P195 data (black solid line) and the salinity corrected data (red dashed line).
+5
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+FIGURE 3|The relationship between spawning adult and instar recruit blue crabs displayed as (a) NC DMF calculated spawning stock biomass (SSB) in blue and (b) NC DMF P195 relative spawning abundance, as crabs per tow, in red, and mean yearly instar density, from SDH and ESG habitats, per meter squared as white bars. Ribbons and error bars display standard error. (a) The dashed line displays the fishery's maximum sustainable yield threshold value of 64 million crabs, and the dotted line displays the target value of 73 million crabs. Data only go up to 2016 since that is the most current NC DMF data available. (b) Letters display SNK analysis results when log mean instar density was compared across years. There was no difference in instar density between the 1996­1999 and 2017­2019 sampling periods (p=0.42) even when 2019 was excluded (p=0.56).
+
+abundance. To verify that the relative spawner abundance data were a suitable proxy for SSB (Figure 3a), a Pearson correlation test was conducted to compare these two measurements over the 1995­2016 period (p=0.0054, r(20)=0.57). Fishery-i ndependent SSB, which is measured and calculated by NC DMF (for details on data collection and calculation, see North Carolina Division of Marine Fisheries 2018), was not used for this analysis because, at the time of writing, 2016 was the most current data available, and did not overlap with our juvenile recruitment data.
+2.4|Statistical Analyses
+Early juvenile blue crab instar density, measured as J1­J9 crabs per meter squared, was skewed strongly left across all sites, years, and habitat types. Therefore, instar density was log+1 transformed, which resulted in a normal distribution and homogeneous variances. Hereafter, log-transformed instar density per meter squared will simply be referred to as instar density.
+
+variation in density of early juvenile blue crab instars (J1­J9 instars pooled) as a function of year (7 levels: 1996­1999 and 2017­2019) and habitat type (3 levels: western R. maritima dominated seagrass beds [WSG], western shallow detrital habitat [SDH], and eastern mixed species seagrass beds [ESG]). However, a significant interaction term between year and habitat (F10, 328=3.16, p<0.001) resulted in comparing variation in instar density among habitats within a given year by conducting separate one-way ANOVA models for each year. Variation in instar density across years was assessed using a one-w ay ANOVA, where instar density was averaged across habitat types, and variability was compared across years. A Student Newman Keuls (SNK) analysis detected individual differences in mean instar density among years. Additionally, because of the decline in blue crab spawning stock (Figure 3) between the 1996­1999 and 2017­2019 data sets, a one-w ay ANOVA was run to assess how instar density varied between these sampling periods. This analysis was run with and without the 2019 data to evaluate the model's sensitivity to that year, since the sampling methods used in 2019 differed from those used in the rest of the study.
+
+2.4.1|Distribution and Density of Early Juvenile Instars
+Instar density and distribution were first compared using a two-way analysis of variance (ANOVA) model measuring the
+
+2.4.2|Stock­Recruit and Recruit­Stock Relationships
+Relative spawner abundance based on CPUE from P195 was used as a proxy for blue crab spawning stock abundance.
+
+6
+
+Fisheries Oceanography, 2025
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Recruit abundance was measured as the yearly mean instar density across all months and for sites and habitats, ESG and SDH. Samples from WSG habitats were excluded from this analysis because of the ephemeral nature of Ruppia beds and the difficulty of locating Ruppia beds during every sampling period.
+The relationship between relative spawner abundance and early juvenile recruits (i.e., stock­recruit relationship), as well as early juvenile recruits and relative spawner abundance 1year later (i.e., recruit­stock relationship), was tested with linear least squares regression models. For the stock­recruit relationship, the relative spawner abundance in year t was used as the independent variable, and the mean instar density in the same year t was the dependent variable. The regression was set with a y-intercept of 0 in accordance with classic stock­recruit calculations (Yang and Yamakawa 2022). For the recruit­stock relationship, the annual mean instar density in year t was used as the independent variable, and the spawning stock in the following year t+1 was used as the dependent variable.
+3|Results
+3.1|Distribution and Density of Early Juvenile Instars
+Western seagrass beds had the highest density of juvenile blue crabs almost every year it was sampled; however, the strength of this effect differed over time (Figure 4). The difference in juvenile crab density varied statistically among habitats in the years 1997, 1999, 2017, and 2019 (Table 2). In each of these years, ESG and SDH had statistically similar densities of early
+
+juvenile crabs, whereas the density in WSG was significantly higher (SNK Multiple comparisons test; Figure 4). The effect size varied between these 4years, with the WSG beds exhibiting an increasing density of juvenile crabs over time starting in 1999 (Figure 4). In 1997, WSG had 208.35% more juvenile crabs than the average density for ESG and SDH. This number rose to 306.44% in 1999, 338.73% in 2017, and 403.24% in 2019. A fully crossed comparison of habitat and year could not be conducted because of a significant interaction (F10, 328=3.16, p<0.001).
+Mean yearly recruitment, calculated from log transformed instar density in ESG and SDH habitats, fluctuated yearly (F6,302=10.14, p<0.001; Figure 3b) with the lowest recruitment occurring in 1997 with 11.18±3.87 crabs m-2 and the maximum recruitment occurring in 2019 with 41.55±12.27 crabs m-2 and 1998 with 28.65±7.23 crabs m-2, where variation is reported as 95% confidence intervals. SNK results uncovered an alternating- year trend where high recruitment years were followed by low recruitment years and vice versa (Figure 3b). There was no difference in mean instar density between the 1996­1999 and 2017­2019 sampling periods (p=0.42, F1,307=0.77), even when 2019 was excluded (p=0.56, F1,283=0.56). Recruitment averaged 20.7±3.34 crabs m-2 from 1996 to 1999 and averaged 21.3±3.7 crabs m-2 from 2017 to 2019 and 16.2±2.77 crabs m-2 from 2017 to 2018, when 2019 data were excluded.
+3.2|Stock­Recruit and Recruit­Stock Relationships
+The raw P195 data on mature female abundance per trawl decreased with increasing mean yearly bottom salinity (p=0.0074, F1,26=8.44, R2=0.25), a trend strongly influenced by two high- abundance, low-salinity years, 1996 and 2003 (Figure 2a). After correcting for salinity, relative spawning abundance was not related to salinity and was positively correlated with SSB (test statistics are listed in the methods section). There was a positive and statistically significant relationship between the annual index of spawning stock in year t and the annual index of early juvenile density in year t when the y-i ntercept was forced through 0 (p=0.028, F1,6=8.32, R2=0.58; Figure 5a). However, much of that relationship hinged on the 1996 data point with the largest relative spawning abundance in the dataset. Additionally, the model lost strength when the y-i ntercept was not set to 0 (p=0.30, F1,4=1.42, R2=0.26) yet maintained a positive trend. The relationship between the annual index of early juvenile density in year t and spawning stock in year t+1 was not statistically significant (p=0.57, F1,5=0.38, R2=0.070; Figure 5b).
+
+FIGURE 4|The change in mean juvenile blue crab density was measured as individual J1­J9 instars per meter squared, across three habitat types: eastern mixed-species seagrass beds (ESG) in blue, western Ruppia maritima seagrass beds (WSG) in green, and shallow detrital habitat (SDH) in red, for each year of the study 1996­1999 and 2017­2019. Error bars are the standard error. Asterisks denote years where mean crab density varied significantly according to habitat type. The dashed line indicates the break in years between the two sampling periods. WSG was not sampled in 2018.
+
+4|Discussion
+The mean density of early juvenile blue crabs was highest in ephemeral Ruppia beds (WSG) along the western shore of Pamlico Sound. This crab density was greater than in both the shallow detrital habitat (SDH) along the western shore and the mixed seagrass beds (ESG) on the eastern shore. This multiyear pattern is consistent with shorter-term studies conducted in this area (Etherington and Eggleston 2000, 2003;
+
+7
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+TABLE 2|Analysis of variance table describing the variation in log-transformed instar density across three levels of habitat types: western Ruppia maritima seagrass beds (WSG), shallow detrital habitat (SDH), and eastern mixed seagrass species beds (ESG), for each year of sampling. Data include the Df=degrees of freedom, Sum sq=sum of squares, Mean sq=mean squares, F-v alue, and p-value. p-values<0.05 are in bold. WSG was not sampled in 2018.
+
+Year
+
+Factor
+
+Df
+
+Sum sq
+
+Mean sq
+
+F-value
+
+p
+
+1996
+
+Habitat
+
+2
+
+1.63
+
+0.82
+
+0.75
+
+0.48
+
+Residuals
+
+69
+
+74.71
+
+1.083
+
+1997
+
+Habitat
+
+2
+
+20.43
+
+10.22
+
+9.68
+
+0.00022
+
+Residuals
+
+63
+
+66.51
+
+1.056
+
+1998
+
+Habitat
+
+2
+
+3.60
+
+1.80
+
+2.076
+
+0.13
+
+Residuals
+
+71
+
+61.59
+
+0.87
+
+1999
+
+Habitat
+
+2
+
+12.49
+
+6.25
+
+6.61
+
+0.0028
+
+Residuals
+
+52
+
+49.12
+
+0.95
+
+2017
+
+Habitat
+
+2
+
+15.99
+
+7.99
+
+11.56
+
+7.45E-05
+
+Residuals
+
+50
+
+34.58
+
+0.69
+
+2018
+
+Habitat
+
+1
+
+1.91
+
+1.91
+
+1.98
+
+0.17
+
+Residuals
+
+49
+
+47.33
+
+0.97
+
+2019
+
+Habitat
+
+2
+
+12.42
+
+6.21
+
+6.077
+
+0.0073
+
+Residuals
+
+24
+
+24.53
+
+1.022
+
+FIGURE 5|Stock­recruit relationships where spawning stock is displayed as P195-derived relative spawning abundance (crabs per tow), and recruits are log-transformed instar density (crabs m-2) from ESG and SDH habitats. (a) Stock­recruit relationship. The black line represents the sig-
+nificant (p=0.028) trendline when the intercept is set to 0, and the gray shaded area represents the 95% confidence interval. The linear regression equation and R2 are also shown. (b) Recruit­stock relationship where recruit density is in year t and stock is year t+1, and the y-intercept is not set.
+The black dashed line represents the nonsignificant (p=0.57) trendline, and the gray shaded area represents the 95% confidence interval.
+
+Voigt and Eggleston 2023). With respect to stock­recruit and recruit­stock relationships, key findings included a (i) statistically significant, negative relationship between relative spawner abundance and salinity; (ii) positive, yet highly variable stock­recruit relationship; (iii) nonsignificant recruit­ stock relationship; and (iv) no difference in the mean density of early juvenile blue crabs between periods with relatively high spawning stock (1996­1999) versus relatively low spawning stock (2017­2019).
+
+4.1|Distribution and Density Patterns of Early Juvenile Blue Crabs
+Despite the ephemeral nature and limited spatial extent of Ruppia beds, this habitat consistently harbored the highest mean instar densities across most sampled years, demonstrating an enduring pattern of high recruitment to these habitats. Blue crab recruitment, defined as the density of early instars, was highly variable across sites and time. However, Ruppia
+
+8
+
+Fisheries Oceanography, 2025
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+beds in the western region (WSG) contained significantly greater densities of juvenile crabs, often by orders of magnitude, compared with eastern mixed species beds (ESG) and western SDH. Moreover, this trend appeared to strengthen over time. Increasing juvenile crab density in WSG over time may be due to shifts in Ruppia bed locations. Initially (1996­1998), Ruppia beds were predominantly situated in ENG, at the southern end of our study area, whereas in subsequent studies, they were primarily found in MAN, in the northern region of the study site. This shift in Ruppia bed locations from southern to northern locations potentially enhances overall juvenile crab density because of the proximity of the northern, MAN, beds to the cross-sound megalopal and early instar pelagic dispersal corridor extending from Oregon Inlet to the western shore of Pamlico Sound near Stumpy Point (Figure 1; Reyns et al. 2006, 2007).
+
+survey program, exhibited a negative relationship with increasing bottom salinity. This relationship is likely indicative of a bias in the sampling methodology, whereby the adult blue crab habitat is contracted in higher rainfall/lower salinity years in which crabs migrate out of low-s alinity upriver locations, including the adjoining Albemarle Sound, and concentrate in habitats within the sampling area, resulting in increased CPUE (Eggleston et al. 2004; Burgess et al. 2007). This is highlighted by the spikes in abundance in 1996 and 2003, which occurred during exceptionally low-salinity years. Thus, estimates of blue crab spawning stock may be biased high or low depending upon freshwater influx to the APES. Adjustment for salinity mitigated the variability surrounding the mean in relative spawner abundance and should be considered whenever evaluating raw spawning stock abundance data in this system.
+
+The high density of juvenile blue crabs found along the western shore of Pamlico Sound in both WSG beds and SDH, compared with inlet-adjacent ESG beds, may be due to the western shore serving as the endpoint for cross-sound recruitment via both storm-d riven transport and density-d ependent secondary dispersal. However, the notably higher densities of early instars in Ruppia beds, compared with SDH, suggest either greater settlement in Ruppia beds or lower postsettlement mortality or emigration from this habitat. Future studies should explore these potential mechanisms to better understand the factors driving the high densities of early instar blue crabs in Ruppia beds.
+Mixed seagrass beds (ESG) along the sound-side of the Outer Banks have traditionally been considered the primary nursery habitat for postsettlement blue crabs (Orth and Van Montfrans 1987; Etherington and Eggleston 2000, 2003; North Carolina Division of Marine Fisheries 2018). The results of this study indicate that WSG and SDH habitats often exhibit comparable, if not greater, recruitment densities than ESG. This finding highlights the significance of postsettlement, cross-sound transport processes that can expand the nursery capacity of the estuary by delivering early instars to alternative settlement and nursery habitats. The role that these alternative settlement and nursery habitats (WSG and SDH) play in blue crab production and contribution to the spawning stock is still unknown. Currently, most fishery-independent assessments of blue crab recruitment in North Carolina, which rely on trawl surveys (North Carolina Division of Marine Fisheries 2018), primarily target juvenile crabs that are >60-mm CW. This approach overlooks smaller recruits (2.2­20mm) that inhabit nursery habitats, as well as the nursery habitats themselves, which are in shallower waters inaccessible to trawl surveys. This study underscores the need for improved monitoring and conservation efforts targeting western shore nursery habitats and the juvenile size classes reliant on them.
+4.2|Stock­Recruit and Recruit­Stock Relationships
+4.2.1|Effects of Salinity on Fishery-I ndependent Abundance Index
+The relative spawner abundance of blue crabs, assessed through the annual mean September abundance of mature female blue crabs captured via the NC DMF P195 fishery-independent trawl
+
+4.2.2|Stock­Recruitment Relationship and Implications of Early Instar Density Patterns
+There was a positive and statistically significant spawning stock­recruitment relationship in this study; however, the relationship was highly variable and strongly driven by relatively high spawning stock in 1996. This peak in spawning stock abundance is likely real, as 1996 recorded some of the highest blue crab commercial landings on record (Eggleston et al. 2004; North Carolina Division of Marine Fisheries 2018). Additionally, the P195 data used to generate spawning stock measurements were based on crab counts that were sorted to species, whereas recruit data included both C. sapidus and C. similis, because of difficulties in morphological differentiation when crabs were <20-m m CW. However, both the P195 data (>60-mm CW) and subsamples from instar collections showed that C. similis maintained a consistent proportion of the Callinectes spp. catch across years and therefore should not confound the stock­ recruit relationships. Furthermore, the positive stock­recruit trend aligns with findings from other studies on blue crab stock­ recruit relationships, which have also identified positive compensatory relationships (Lipcius and Van Engel 1990; Lipcius and Stockhausen 2002; Kahn and Helser 2005; North Carolina Division of Marine Fisheries 2018--via modeled data). Despite the positive relationship observed, there was no significant difference in mean instar density between periods of high spawning stock (1996­1999) and low spawning stock (2017­2019). Although it may be that spawning stock did not decline enough in the 2017­2019 period to result in a significant decrease in recruitment, this lack of difference is still unexpected. After the 1999 overfishing event, fishing pressure was reduced, yet this did not lead to a rebound in the spawning stock (North Carolina Division of Marine Fisheries 2018). This absence of recovery has often been attributed to recruitment overfishing, which could result in significantly reduced megalopal influx or early instar recruits. However, the similar instar densities between 1996­1999 and 2017­2019 suggest a potential population bottleneck occurring at later life stages (e.g., Rothschild 1986) or potentially other sources of megalopae to this system. Potential changes in the relative influx of blue crab megalopae between the 1990s and more recently are unknown and deserve further examination. Although hydrodynamic models indicate that larvae tend to be maintained within the range of their home estuary (Epifanio and Garvine 2001; Tilburg et al. 2007; Ogburn
+
+9
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+and Habegger 2015), genetic studies indicate the possibility of mixing across estuaries (Feng et al. 2017). Thus, it is possible that some of the juveniles observed in our study system originated from estuaries outside of APES. Potential population bottlenecks at later life history stages of blue crab, such as between juveniles and subadults or between subadults and adults, are also unknown. However, there is fishery-independent data via NC DMF Programs 195 and 120 to explore this issue. The potential for population bottlenecks at later life history stages is supported by the observed decrease in subadults (127mm), as reported by NC DMF's traffic light stock assessment approach, which consistently showed a decline in subadult abundance following 1999, continuing through to 2016, the most recent data available (North Carolina Division of Marine Fisheries 2018).
+Recruitment of early instars in this study appeared to fluctuate by year, with an alternating pattern of relatively high recruitment years followed by low recruitment years and vice versa. This may be a sign of a compensatory response driven by density-d ependent recruitment levels. Population models for the North Carolina blue crab have displayed a Ricker spawner­recruit relationship (North Carolina Division of Marine Fisheries 2018), which can, in certain situations, cause population oscillations (Ricker 1954). Conversely, this alternating cycle may be driven by postsettlement processes such as mortality due to cannibalism, which is common in blue crabs (Hines and Ruiz 1995; Van Montfrans et al. 1995) and, when occurring from older cohorts to younger ones, can cause population cycling (Botsford and Hobbs 1995).
+
+stock­recruit relationship was observed, aligning with previous studies indicating a compensatory, density-d ependent relationship. Based on sampling that spanned more than a decade, we found that western nursery habitats, including ephemeral Ruppia beds and SDH, supported densities of early juvenile blue crab instars that were comparable to, or even greater than, those in the eastern inlet-a djacent mixed-species seagrass beds. The results of this study highlight the necessity for more comprehensive empirical studies examining the recruitment of exploited fisheries species and the nursery habitats they utilize.
+Author Contributions
+This manuscript has been approved for publication by all authors. All authors contributed to developing the study and acquiring funding. LLE conducted field collection and sample processing for the 1996-1999 samples and EPV conducted field collection and sample processing for the 2017-2019 samples. All authors contributed to data analysis and manuscript preparation.
+Acknowledgments
+The funding was provided by NC Sea Grant (R18-H CE-2 ), Southeastern Climate Adaptation Science Center, Albemarle-Pamlico National Estuarine Partnership (APNEP), Curtis and Edith Munson Foundation, North Carolina Division of Marine Fisheries (2017_H_063 & 2019_H_077), and the Center for Marine Sciences and Technology, NC State University. Special thanks are given to A. Quackenbush, C. Swanga, G. Hopkins, A. Myers, C. Branan, R. P. Lyon, O. Caretti, K. Simmons, D. Bowling, I. Grace, and M. LaCroce for their help in the field, processing samples, and assisting in manuscript revision.
+
+4.2.3|Recruit­Stock Relationship
+The absence of a relationship between instar recruits in year t and the spawning stock in the subsequent year (t+1; recruit­ stock relationship) reinforces the previous assessment that a population bottleneck occurs after the ontogenetic shift out of nursery habitats but before reaching sexual maturity and that external factors are influencing population dynamics at a rate not proportional to the population size. The lack of a strong stock­recruitment relationship and lack of a recruit­stock relationship highlight the need for additional empirical data on recruitment and spawning stock abundances. Although these studies may be burdensome to conduct both in time and funding, these data are vital to better managing an environmentally and economically important species.
+4.3|Conclusion
+In conclusion, our study found no evidence of recruitment overfishing in the North Carolina blue crab population when recruitment is defined as early instar postsettlement densities. Instar density remained consistent between the periods of 1996­1999 (characterized by high blue crab spawning stock) and 2017­2019 (when the spawning stock was low and the fishery was considered overexploited). This pattern, coupled with the absence of a recruit-to-spawning stock relationship, suggests a population bottleneck occurring after juvenile crabs have left nursery habitats and before reaching sexual maturity. One caveat is that potential changes in megalopal influx between the two periods remain unknown. Nevertheless, a weak but positive
+
+Ethics Statement
+This study complies with the North Carolina Division of Marine Fisheries Scientific or Education Collection and Activity rules and was collected under permit #1012889.
+Conflicts of Interest
+The authors declare no conflicts of interest.
+Data Availability Statement
+Juvenile blue crab density data are openly available in Dryad at https:// doi.org/10.5061/dryad.gtht76hxj.
+References
+Beck, M. W., K. L. Heck, K. W. Able, et al. 2001. "The Identification, Conservation, and Management of Estuarine and Marine Nurseries for Fish and Invertebrates: A Better Understanding of the Habitats That Serve as Nurseries for Marine Species and the Factors That Create Site- Specific Variability in Nursery Quality Will Improve Conservation and Management of These Areas." Bioscience 51, no. 8: 633­641.
+Blackmon, D. C., and D. B. Eggleston. 2001. "Factors Influencing Planktonic, Post-Settlement Dispersal of Early Juvenile Blue Crabs (Callinectes sapidus Rathbun)." Journal of Experimental Marine Biology and Ecology 257, no. 2: 183­203.
+Botsford, L. W., and R. C. Hobbs. 1995. Recent Advances in the Understanding of Cyclic Behavior of Dungeness Crab (Cancer magister) Populations.
+Burgess, C., A. Bianchi, J. Murauskas, and S. Crosson. 2007. Impacts of Hurricanes on North Carolina Hisheries. Vol. 233. North Carolina Department of Environment and Natural Resources, Division of Marine Fisheries.
+
+10
+
+Fisheries Oceanography, 2025
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Burkholder, J., D. Eggleston, H. Glasgow, et al. 2004. "Comparative Impacts of Two Major Hurricane Seasons on the Neuse River and Western Pamlico Sound Ecosystems." Proceedings of the National Academy of Sciences of the United States of America 101, no. 25: 9291­9296.
+Cardinale, M., and F. Arrhenius. 2000. "The Relationship Between Stock and Recruitment: Are the Assumptions Valid?" Marine Ecology Progress Series 196: 305­309.
+Cobb, J. S., and J. F. Caddy. 1989. "The Population Biology of Decapods." In Marine Invertebrate Fisheries: Their Assessment and Management, 327­374. John Wiley and Sons.
+Dahlgren, C. P., G. T. Kellison, A. J. Adams, et al. 2006. "Marine Nurseries and Effective Juvenile Habitats: Concepts and Applications." Marine Ecology Progress Series 312: 291­295.
+Eggleston, D. B., G. W. Bell, and S. P. Searcy. 2009. "Do Blue Crab Spawning Sanctuaries in North Carolina Protect the Spawning Stock." Transactions of the American Fisheries Society 138, no. 3: 581­592.
+Eggleston, D.B., J. Hightower, and E. Johnson. 2004. "Population Dynamics and Stock Assessment of the Blue Crab in North Carolina." Final Report to the North Carolina Sea Grant/Blue Crab Research Program for Project Projects 99-FEG-10 and 00-FEG-11. North Carolina Department of Environment and Natural Resources, Division of Marine Fisheries.
+Eggleston, D. B., N. B. Reyns, L. L. Etherington, G. R. Plaia, and L. Xie. 2010. "Tropical Storm and Environmental Forcing on Regional Blue Crab (Callinectes sapidus) Settlement." Fisheries Oceanography 19, no. 2: 89­106.
+Epifanio, C. E., and R. W. Garvine. 2001. "Larval Transport on the Atlantic Continental Shelf of North America: A Review." Estuarine, Coastal and Shelf Science 52, no. 1: 51­77.
+Etherington, L. L., and D. B. Eggleston. 2000. "Large-S cale Blue Crab Recruitment: Linking Postlarval Transport, Post-Settlement Planktonic Dispersal, and Multiple Nursery Habitats." Marine Ecology Progress Series 204: 179­198.
+Etherington, L. L., and D. B. Eggleston. 2003. "Spatial Dynamics of Large-Scale, Multistage Crab (Callinectes sapidus) Dispersal: Determinants and Consequences for Recruitment." Canadian Journal of Fisheries and Aquatic Sciences 60, no. 7: 873­887.
+Etherington, L. L., D. B. Eggleston, and W. T. Stockhausen. 2003. "Partitioning Loss Rates of Early Juvenile Blue Crabs From Seagrass Habitats Into Mortality and Emigration." Bulletin of Marine Science 72, no. 2: 371­391.
+Feng, X., E. P. Williams, and A. R. Place. 2017. "High Genetic Diversity and Implications for Determining Population Structure in the Blue Crab Callinectes sapidus." Journal of Shellfish Research 36, no. 1: 231­242.
+Ferguson, R. L., and K. Korfmacher. 1997. "Remote Sensing and GIS Analysis of Seagrass Meadows in North Carolina, USA." Aquatic Botany 58, no. 3­4: 241­258.
+Hilborn, R., and C. J. Walters. 1992. "Stock and Recruitment." In Quantitative Fisheries Stock Assessment: Choice, Dynamics and Uncertainty, 241­296. Springer US.
+Hines, A. H., and G. M. Ruiz. 1995. "Temporal Variation in Juvenile Blue Crab Mortality: Nearshore Shallows and Cannibalism in Chesapeake Bay." Bulletin of Marine Science 57, no. 3: 884­901.
+Hsueh, P. W., J. B. McClintock, and T. S. Hopkins. 1993. "Population Dynamics and Life History Characteristics of the Blue Crabs Callinectes similis and C. sapidus in Bay Environments of the Northern Gulf of Mexico." Marine Ecology 14, no. 3: 239­257.
+Kahn, D. M., and T. E. Helser. 2005. "Abundance, Dynamics and Mortality Rates of the Delaware Bay Stock of Blue Crabs, Callinectes sapidus." Journal of Shellfish Research 24, no. 1: 269­284.
+
+Lipcius, R. N., and W. T. Stockhausen. 2002. "Concurrent Decline of the Spawning Stock, Recruitment, Larval Abundance, and Size of the Blue Crab Callinectes sapidus in Chesapeake Bay." Marine Ecology Progress Series 226: 45­61.
+Lipcius, R. N., and W. A. Van Engel. 1990. "Blue Crab Population Dynamics in the Chesapeake Bay: Variation in Abundance (York River, 1972­1988) and Stock-Recruit Functions." Bulletin of Marine Science 46, no. 1: 180­194.
+Lorenzen, K. 2005. "Population Dynamics and Potential of Fisheries Stock Enhancement: Practical Theory for Assessment and Policy Analysis." Philosophical Transactions of the Royal Society, B: Biological Sciences 360, no. 1453: 171­189.
+Mense, D. J., M. H. Posey, T. West, and K. Kincheloe. 1995. "Settlement of Brachyuran Postlarvae Along the North Carolina Coast." Bulletin of Marine Science 57, no. 3: 793­806.
+NOAA Fisheries. 2022. Fisheries Economics of the United States 2019. Economics and Sociocultural Status and Trends Series. NOAA Technical Memorandum Available from https://www.st.nmfs.noaa.gov/st5/publi cation/i ndex.h tml.
+North Carolina Division of Marine Fisheries. 2018. Stock Assessment of the North Carolina Blue Crab (Callinectes sapidus), 1995­2016. North Carolina Division of Marine Fisheries NC DMF SAP-SAR-2018-02.
+Ogburn, M. B., and L. C. Habegger. 2015. "Reproductive Status of Callinectes sapidus as an Indicator of Spawning Habitat in the South Atlantic Bight, USA." Estuaries and Coasts 38: 2059­2069.
+Ogburn, M. B., M. Hall, and R. B. Forward Jr. 2012. "Blue Crab (Callinectes sapidus) Larval Settlement in North Carolina: Environmental Forcing, Recruit­Stock Relationships, and Numerical Modeling." Fisheries Oceanography 21, no. 1: 20­32.
+Orth, R. J., and J. Van Montfrans. 1987. "Utilization of a Seagrass Meadow and Tidal Marsh Creek by Blue Crabs Callinectes sapidus. I. Seasonal and Annual Variations in Abundance With Emphasis on Post- Settlement Juveniles." Marine Ecology Progress Series 41: 283­294.
+Perry, H. M., J. Anderson, and L. Collins. 2022. "Status and Management of the Blue Crab Fishery in the Gulf of Mexico." North American Journal of Fisheries Management 42, no. 1: 164­179.
+Pietrafesa L. J., and G. S. Janowitz. 1991. The Albemarle-Pamlico Coupling Study. Final Report to the Environmental Protection Agency, Washington, DC.
+Pietrafessa, L. J., G. S. Janowitz, T.-Y. Chao, R. H. Weisberg, F. Askari, and E. Noble. 1986. The Physical Oceanography of Pamlico Sound. University of North Carolina Sea Grant Publication UNC-WP-86-5.
+Pile, A. J., R. N. Lipcius, J. Van Montfrans, and R. J. Orth. 1996. "Density-Dependent Settler-Recruit-Juvenile Relationships in Blue Crabs." Ecological Monographs 66, no. 3: 277­300.
+Reyns, N. B., and D. B. Eggleston. 2004. "Environmentally-Controlled, Density-D ependent Secondary Dispersal in a Local Estuarine Crab Population." Oecologia 140: 280­288.
+Reyns, N. B., D. B. Eggleston, and R. J. A. Luettich. 2006. "Secondary Dispersal of Early Juvenile Blue Crabs Within a Wind-Driven Estuary." Limnology and Oceanography 51, no. 5: 1982­1995.
+Reyns, N. B., D. B. Eggleston, and R. A. Luettich Jr. 2007. "Dispersal Dynamics of Post-Larval Blue Crabs, Callinectes sapidus, Within a Wind-Driven Estuary." Fisheries Oceanography 16, no. 3: 257­272.
+Ricker, W. E. 1954. "Stock and Recruitment." Journal of the Fisheries Research Board of Canada 11, no. 5: 559­623.
+Rothschild, B. J. 1986. Dynamics of Marine Fish Populations. Harvard University Press.
+Rothschild, B. J. 2000. ""Fish Stocks and Recruitment": The Past Thirty Years." ICES Journal of Marine Science 57, no. 2: 191­201.
+
+11
+
+13652419, 0, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/fog.70009, Wiley Online Library on [29/09/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Roughgarden, J., S. Gaines, and H. Possingham. 1988. "Recruitment Dynamics in Complex Life Cycles." Science 241, no. 4872: 1460­1466.
+Schneider, C. A., W. S. Rasband, and K. W. Eliceiri. 2012. "NIH Image to ImageJ: 25 Years of Image Analysis." Nature Methods 9, no. 7: 671­675.
+Subbey, S., J. A. Devine, U. Schaarschmidt, and R. D. Nash. 2014. "Modelling and Forecasting Stock­Recruitment: Current and Future Perspectives." ICES Journal of Marine Science 71, no. 8: 2307­2322.
+Sutherland, W. J. 2001. "Sustainable Exploitation: A Review of Principles and Methods." Wildlife Biology 7, no. 3: 131­140.
+Tilburg, C. E., A. I. Dittel, and C. E. Epifanio. 2007. "Retention of Crab Larvae in a Coastal Null Zone." Estuarine, Coastal and Shelf Science 72: 570­578.
+Van Montfrans, J., C. E. Epifanio, D. M. Knott, et al. 1995. "Settlement of Blue Crab Postlarvae in Western North Atlantic Estuaries." Bulletin of Marine Science 57, no. 3: 834­854.
+Voigt, E. P., and D. B. Eggleston. 2023. "Spatial Variation in Nursery Habitat Use by Juvenile Blue Crabs in a Shallow, Wind-Driven Estuary." Estuaries and Coasts 46, no. 2: 526­540.
+Xie, L., and D. B. Eggleston. 1999. "Computer Simulations of Wind- Induced Estuarine Circulation Patterns and Estuary-Shelf Exchange Processes: The Potential Role of Wind Forcing on Larval Transport." Estuarine, Coastal and Shelf Science 49, no. 2: 221­234.
+Yang, Y., and T. Yamakawa. 2022. "Re-Examination of Stock- Recruitment Relationships: A Meta-A nalysis." ICES Journal of Marine Science 79, no. 4: 1380­1393.
+
+12
+
+Fisheries Oceanography, 2025
+
+

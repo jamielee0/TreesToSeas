@@ -1,0 +1,118 @@
+# Physiological tolerance envelopes for the Trees to Seas suitability engine.
+#
+# Each factor is a trapezoidal membership function with FOUR breakpoints:
+#     [lo_zero, lo_one, hi_one, hi_zero]
+#   suitability = 0 at/below lo_zero -> ramps to 1 by lo_one -> holds 1 to hi_one
+#               -> ramps to 0 by hi_zero (0 at/above hi_zero).
+#   One-sided "more is better" factors (DO, pH) set hi_one/hi_zero far above any
+#   observed value, so suitability plateaus at 1.
+#
+# v0.2 -- values are LITERATURE-CALIBRATED and adversarially fact-checked.
+# Per-factor `tags` mark NC-specific vs. transferred; `citations` give the source;
+# `caveats` record life-stage dependence and soft endpoints. Full table + sources:
+# docs/tolerance_table.md. Treat transferred values as provisional and revisit with
+# NC-specific data where possible (esp. blue crab, all transferred).
+
+eastern_oyster:
+  common_name: "Eastern oyster"
+  scientific_name: "Crassostrea virginica"
+  anchor: true
+  factors:
+    temp_C: [-2, 20, 30, 36]
+    salinity_ppt: [2, 14, 30, 40]
+    DO_mgL: [1, 4, 1000, 2000]
+    pH: [7.5, 8, 100, 200]
+  degree_days:
+    base_C: 20
+    event: "spawning_onset"
+  tags:
+    temp_C: "transferred"
+    salinity_ppt: "NC-specific"
+    DO_mgL: "NC-specific"
+    pH: "transferred"
+    degree_days: "transferred"
+  citations:
+    temp_C: "Lower opt 20 / upper opt 30 C: LA Coastal Master Plan Eastern Oyster HSI (Hijuelos et al. 2016, citing Pattillo et al. 1995 & Stanley & Sellers 1986) [Gulf]; NC growing range 10-30 C: NC CHPP 2005 Ch.3 p.202 (citing Burrell 1986, Castagna & Chanley 1973) [NC-specific]. Upper lethal ~36 C: Marshall, Coxe, La Peyre et al. 2021, J. Thermal Biology 100:103072 (3-day LD50 35-36 C at 4 ppt, rising to 40-44 C at 20 ppt) [Gulf/lab]. Lower bound -2 C: coarse intertidal/eurythermal survival bound, Animal Diversity Web + overwintering literature [transferred]."
+    salinity_ppt: "Optimum 14-30 ppt (spat/adults): NC CHPP 2005 p.202 (citing Castagna & Chanley 1973) [NC-specific]; lower lethal ~2 ppt and upper ~40 ppt adult survival envelope: LA HSI Table 1 (Pattillo et al. 1995, adult range 2-43.5 ppt) [Gulf]; upper optimum effectively capped near 30 ppt by predation/disease above ~15 ppt (Perkinsus, oyster drills)."
+    DO_mgL: "Lethal ~1 mg/L (1-2 mg/L lethal-to-harmful band): NC CHPP 2005 p.202 [NC-specific]; saturating ~4 mg/L ('requires ~4 mg/L for proper physiological function'): general/lab rule-of-thumb, Keppel et al. 2016 PLOS ONE 11:e0161088 normoxia >5 mg/L [transferred, weakly sourced]."
+    pH: "Stress/dissolution onset ~7.5 (calcification declines with ~0.5-unit drop, net dissolution at lowest pH) and adequate ~8.0 (control where calcification maintained): Waldbusser, Voigt, Bergschneider, Green & Newell 2011, Estuaries & Coasts 34:221-231 [Chesapeake/lab]; larval performance governed by aragonite saturation (Omega_arag<1): Waldbusser et al. 2015 Nat. Clim. Change 5:273-280; Gray et al. 2020 J. Molluscan Stud. 86:342-353 [lab]."
+    degree_days: "Base 20 C, spawning onset: spawning initiated >~20 C, mass spawning >~25 C: EOBRT 2007 NOAA Tech. Memo NMFS F/SPO-88; Banks et al. 2007; Stanley & Sellers 1986; northern pops spawn 15.5-20 C, southern require >20 C [transferred/general]."
+  caveats: "ANCHOR species (paired mortality + growth data). NC-specific values exist only for the broad envelopes: growing temp 10-30 C, optimum salinity 14-30 ppt, and DO <1-2 mg/L lethal (all NC CHPP 2005). The salinity optimum and DO lethal threshold are genuinely NC-derived; the temperature optimum/upper-lethal, the DO saturating value (~4 mg/L), and ALL pH/aragonite thresholds are transferred from Gulf, Chesapeake, or lab studies. CITATION CORRECTION: Marshall et al. 2021 is J. Thermal Biology 100:103072 (NOT Mar. Environ. Res. 168:105322 as originally listed). Verifier flags three soft endpoints: (1) upper lethal 36 C is salinity-DEPENDENT (acutely lethal only at low salinity ~4 ppt; rises to 40-44 C at 20 ppt) and the authors say the upper critical limit 'is not well defined' - 36 C used here as a CONSERVATIVE upper-lethal floor; (2) DO saturating 4 mg/L is a round-number management rule, not a measured threshold (experimental normoxia controls were >5 mg/L) - conservative; (3) lower lethal -2 C is a coarse intertidal bound, not a measured LT (adults overwinter at -1 to 0 C for months). LIFE-STAGE: tolerance increases gametes<embryos<larvae<spat<adults; larvae/spat have NARROWER salinity tolerance (larval optimum ~8-15 ppt vs adult 15-30), are far more hypoxia-sensitive (larval anoxia LT50 ~11-51 h vs ~150 h juveniles; Baker & Mann 1992), and earliest embryonic stages are most acidification-vulnerable. Realized NC stress is concentrated on the larval/spat recruitment bottleneck (low-salinity x high-summer-temp + diel-cycling hypoxia in shallow estuaries), not adults on the reef. DO and pH are modeled one-sided (more-is-better)."
+
+blue_crab:
+  common_name: "Blue crab"
+  scientific_name: "Callinectes sapidus"
+  anchor: false
+  factors:
+    temp_C: [3, 24, 28, 36]
+    salinity_ppt: [0, 3, 30, 60]
+    DO_mgL: [2, 5, 1000, 2000]
+    pH: [7.3, 7.9, 100, 200]
+  degree_days:
+    base_C: 10.8
+    event: "molt_growth_onset"
+  tags:
+    temp_C: "transferred"
+    salinity_ppt: "transferred"
+    DO_mgL: "transferred"
+    pH: "transferred"
+    degree_days: "transferred"
+  citations:
+    temp_C: "Lower lethal ~3 C (mortality rises sharply 1-5 C, aggravated by low salinity): Rome et al. 2005, J. Exp. Mar. Biol. Ecol. 319:129-145; Glaspie et al. 2021 PLOS ONE 16:e0257569 (10% survival at 2 C/5 psu over 40 d, extending to ~80 d at 4 C) [Chesapeake/lab]. Optimum 24-28 C (aerobic/metabolic): Leffler 1972 Mar. Biol. 14:104-110; Frontiers Mar. Sci. 2022 TPC modeling (optimal 24 C); tropical-population thermal study Comp. Biochem. Physiol. 2021 [lab/Mediterranean]. Upper ~36 C as conservative sustained-field/48-h limit (acute CTmax markedly higher, 35-41.4 C acclimation-dependent): Tagatz 1969 TAFS 98:713-716; Comp. Biochem. Physiol. 2021 [transferred]."
+    salinity_ppt: "Lower lethal 0 ppt (survives fresh; CTmin=0 psu): Sci. Total Environ. 2024 (S0048969724064477). Adult osmoregulatory optimum ~3-15 psu, growth optimum band ~3-30 ppt: Rome et al. 2005; lagoon optima 5-30 psu: Sci. Total Environ. 2024. Upper limit ~60 ppt (conservative; CTmax 62.4 psu, records to ~117 g/L Laguna Madre): Sci. Total Environ. 2024 [Gulf/Mediterranean/lab]."
+    DO_mgL: "Lethal/avoidance ~2 mg/L (conventional hypoxia + behavioral-avoidance threshold; resting-adult Pcrit actually lower ~1.3-1.6 mg/L): Das & Stickle 1993 Mar. Biol. 116:541-548; Brill et al. 2015 J. Exp. Mar. Biol. Ecol. Saturating ~5 mg/L (performance not compromised above ~50% air sat ~3.5-4 mg/L; no harvest limitation above ~5 mg/L): Brill et al. 2015; Estuaries & Coasts harvest study (BF02695970) [Chesapeake/Gulf/lab]."
+    pH: "Stress ~7.3 (low pH 7.16-7.33 cut 14-d zoeal survival ~49% alone, ~87% with low DO) and adequate ~7.9 (control 7.91-7.94): Tankersley/Miller et al. 2018 PLOS ONE 13:e0208629; adults/juveniles comparatively OA-resilient: Ries et al. 2009 Geology 37:1131-1134 [lab, Chesapeake/SE-US source crabs]."
+    degree_days: "Base 10.8 C = growth-based temperature of torpor (Tmin); intermolt ~536 degree-days: Brylawski & Miller 2006, Can. J. Fish. Aquat. Sci. 63(6):1298-1308, doi:10.1139/f06-011 [lab; value exactly verified]."
+  caveats: "STRONGLY life-stage-dependent; ALL parameters transferred (Chesapeake/Gulf/SE-US/lab/Mediterranean/tropical-Mexican). The only genuinely NC-derived datum is Newport River megalopae salinity-acclimation behavior (Forward et al.: coastal megalopae intolerant of 5-10 ppt, acclimate within ~12 h) - behavioral, not a tolerance limit. CITATION CORRECTION: degree-day base source is Brylawski & Miller 2006 Can. J. Fish. Aquat. Sci. 63(6):1298-1308 (NOT 'Mar. Biol. 2006'). Verifier flags: (1) upper lethal 36 C is the WEAKEST value - it conflates metrics; acute CTmax is 35-41.4 C (acclimation-dependent) and TPC models estimate ~40 C, so 36 C is defensible only as a conservative sustained-exposure/48-h limit for high-acclimation crabs, NOT an acute kill point. (2) DO lethal 2 mg/L is a hypoxia/behavioral-avoidance and severe-stress threshold, NOT a resting-adult acute LC - resting adults regulate down to ~1.3-1.6 mg/L, while LARVAE are killed at the much higher ~3.86 mg/L (4-d LC50, Tankersley/Miller 2018). SALINITY is the sharpest life-stage split: juveniles/adults are euryhaline osmoregulators (~0-60 ppt) with a brackish growth optimum, but eggs/zoeae/megalopae need high salinity (zoeae require >~20-22 ppt, optimum ~30 ppt at 25 C; Costlow & Bookhout 1959) - ovigerous females migrate seaward to spawn and larvae develop on the shelf. TEMPERATURE/DORMANCY: the temp x salinity interaction is the dominant overwintering bottleneck (cold mortality far worse at low salinity; Rome et al. 2005). HEMATODINIUM CAVEAT: high salinity (26-30 ppt) is physiologically fine but epidemiologically dangerous - it enables Hematodinium perezi transmission (prevalence peaks 26-30 ppt, absent <11 ppt; Messick & Shields 2000), so low-salinity upper-estuary reaches act as disease refuges. DO and pH modeled one-sided (more-is-better)."
+
+southern_flounder:
+  common_name: "Southern flounder"
+  scientific_name: "Paralichthys lethostigma"
+  anchor: false
+  factors:
+    temp_C: [2, 18, 25, 35]
+    salinity_ppt: [0, 5, 15, 36]
+    DO_mgL: [2, 6, 1000, 2000]
+    pH: [7, 7.5, 100, 200]
+  degree_days:
+    base_C: 10
+    event: "juvenile_growth"
+  tags:
+    temp_C: "NC-specific"
+    salinity_ppt: "NC-specific"
+    DO_mgL: "NC-specific"
+    pH: "transferred"
+    degree_days: "transferred"
+  citations:
+    temp_C: "Lower lethal 2 C (chronic limit between 2-4 C; mortality 30-100% at 2 C vs 0-10% at 4 C, mitigated by salinity): Taylor, W.E., Tomasso, Kempton & Smith 2000, J. World Aquaculture Soc. 31(1):69-72 [SE-US/lab]; NC field anchor: juveniles in NC estuaries at 2-4 C, Williams & Deubler 1968 (in Flowers et al. 2019 NC DMF) [NC-specific]. Lower/upper optimum 18-25 C nursery/field bracket: FishBase preferred 23.2-24.9 C; Luckenbach et al. 2007 Comp. Biochem. Physiol. A (23 C grew 65-83% larger than 28 C) [NC fish]; lab maximal-growth ~29 C: Del Toro-Silva et al. 2008 JEMBE 358:113-123 [NC fish]. Upper ~35 C occurrence/culture-derived (no measured CTmax exists) [transferred]."
+    salinity_ppt: "Lower lethal 0 ppt = survivable but suboptimal (juveniles ~100% survival 0-10 ppt; enter freshwater): Smith et al. 1999; Flowers et al. 2019 NC DMF (citing Burke et al. 1991). Optimum 5-15 ppt ('thrive in 5-15 ppt'): Flowers et al. 2019 NC DMF (citing Deubler 1960; Stickney & White 1973) [NC-specific]; coastal freshwater not optimal, growth higher in meso/polyhaline: Rulifson et al. 2009. Upper ~36 ppt = full-seawater tolerance bound for adults/larvae (culture to 32 ppt) [transferred/occurrence]."
+    DO_mgL: "Lethal/avoidance ~2 mg/L (juveniles avoid DO <~2 mg/L; negative growth at 1.75 mg/L): Taylor & Miller 2001 JEMBE 258:195-214 (NC Pamlico/Neuse juveniles); Del Toro-Silva et al. 2008 JEMBE 358:113-123 [NC-specific]. Saturating ~6 mg/L (DO limits GROWTH up to near air-saturation: 6.00->4.00 mg/L cut growth ~50% at 29 C): Del Toro-Silva et al. 2008 [NC-specific]."
+    pH: "NO species-specific pH thresholds exist (none in NC DMF, SEDAR/ASMFC, NOAA EFH, or physiology literature; Flowers et al. 2019 discusses water-quality generally with no pH values). Values shown are a transferred generic estuarine-fish lower bound (lo_zero 7.0 / lo_one 7.5) to keep the envelope functional; pH is NOT a reported limiting factor for this species [transferred/placeholder]."
+    degree_days: "NO published degree-day base temperature located for P. lethostigma. base_C=10 C is a transferred placeholder chosen between the ~2-4 C cold limit and the ~23-29 C growth optimum to keep the juvenile-growth accumulator functional; it is NOT a measured developmental base [transferred/placeholder]."
+  caveats: "Best-anchored of the finfish: temperature, salinity, and DO are genuinely NC-specific (NC fish, NC State labs, NC DMF), weighted to estuarine-dependent JUVENILES. EXCEPTIONS flagged transferred: upper-lethal temp ~35 C and upper-salinity ~36 ppt are occurrence/aquaculture-range bounds (no measured CTmax; culture documented to 32 ppt), and pH + degree-day base have NO citable species value (placeholders supplied only to satisfy the 4-number / numeric schema; do NOT treat as measured). CITATION CORRECTION: the cold-tolerance paper is Taylor, W.E., Tomasso, Kempton & Smith 2000, J. World Aquaculture Soc. 31(1):69-72 - NOT 'J.C. Taylor, J.M. Miller ... 31(4)' (the original conflated it with the unrelated NC State J.C. Taylor/J.M. Miller hypoxia group); consequently the experimental 2-4 C limit used SC-lineage hatchery fish (partly transferred) while the NC anchor for 2-4 C is the Williams & Deubler 1968 field record. NOTE the DO saturating value (~6 mg/L) reflects GROWTH limitation, not survival, and is temperature-dependent (pronounced at 29 C, not at 27 C). LIFE-STAGE: low-salinity optimum (5-15 ppt) applies to juveniles; eggs/larvae are oceanic (enter NC inlets Nov-Apr at high salinity) and adults move back to higher salinity/offshore to spawn. TEMPERATURE-DEPENDENT SEX DETERMINATION (fitness, not survival): extreme warm (>27-28 C) and cool (~18 C) masculinize juveniles, ~23 C yields ~1:1 (Luckenbach et al.; Honeycutt et al. 2019). DO and pH modeled one-sided (more-is-better)."
+
+atlantic_croaker:
+  common_name: "Atlantic croaker"
+  scientific_name: "Micropogonias undulatus"
+  anchor: false
+  factors:
+    temp_C: [1, 25, 28, 38]
+    salinity_ppt: [0, 5, 20, 75]
+    DO_mgL: [2, 4, 1000, 2000]
+    pH: [6, 6.5, 100, 200]
+  degree_days:
+    base_C: 10
+    event: "juvenile_growth"
+  tags:
+    temp_C: "transferred"
+    salinity_ppt: "transferred"
+    DO_mgL: "NC-specific"
+    pH: "transferred"
+    degree_days: "transferred"
+  citations:
+    temp_C: "Lower lethal ~1 C (juveniles begin dying <33 F/1 C): SRAC Pub. 7208 (Sink 2011) [aquaculture; acute Gulf lab LT50 ~0.31 C, NAJFM 45(2):225 2025]. Adult cold limit ~3 C, upper lethal: adults >36 C / juveniles >38 C (>100 F): SRAC 7208. Optimum 25-28 C: SRAC 7208 (good growth 25-30 C); EDIS FA148 (most abundant >24 C, Miglarese et al. 1982); FishBase preferred mean 24.1 C; metabolic scope plateaus 25-30 C (JEMBE 2018) [transferred]. Ecological overwintering threshold ~4 C mean Jan-Feb: Montane & Austin (VIMS/Chesapeake)."
+    salinity_ppt: "Lower lethal 0 ppt = tolerated when acclimated (freshwater survival 2+ days; >=2 g/L recommended in culture): SRAC 7208. Optimum 5-20 ppt (best growth ~5 g/L): SRAC 7208; Peterson/Lankford JEMBE (S0022098198001737). Upper limit 75 g/L = max field occurrence in hypersaline waters, NOT a measured lethal: SRAC 7208 (field range 0.2-75 g/L). Eggs need >=30 g/L for buoyancy [transferred]."
+    DO_mgL: "Avoidance ~2 mg/L (demersal fish incl. croaker avoid DO <=2.3 mg/L; hypoxia-driven habitat compression): Eby & Crowder 2002, Can. J. Fish. Aquat. Sci. 59:952-965 (Neuse River Estuary, NC) [NC-specific]. Saturating ~4 mg/L is an UNSUPPORTED estimate (no published croaker no-effect DO concentration); limitation assumed to cease above the ~2-3 mg/L avoidance band [transferred/estimate]."
+    pH: "Only datum: cultured pH 6.0-9.3 with LITTLE effect on growth ('little is known'): SRAC Pub. 7208. Breakpoints 6.0/6.5 are INTERPRETIVE endpoints from the low end of the tolerated range, NOT measured stress/lethal thresholds - note 6.0 itself was non-stressful in culture [transferred/interpretive]."
+    degree_days: "NO degree-day developmental base reported in the reviewed literature. base_C=10 C is a transferred placeholder for the juvenile-growth accumulator (between the ~1-4 C cold limit and the ~25-28 C optimum); NOT a measured base [transferred/placeholder]."
+  caveats: "Nearly all values transferred from mid-Atlantic/Chesapeake/Gulf/aquaculture work; the ONLY genuinely NC-specific datum is the ~2.0 mg/L DO avoidance/habitat-compression threshold from the Neuse River Estuary (Eby & Crowder 2002). KEY VERIFIER CORRECTIONS: (1) lower-lethal temp was originally 0.6 C - that value is UNSOURCED/fabricated precision; SRAC 7208 (the actual document behind the mis-cited 'ASMFC/ResearchGate 292159462' record) gives 1 C for juveniles, so corrected to 1 C (acute Gulf lab LT50 is ~0.3 C, a separate metric). Adult lower-lethal is best stated as 3 C, not 3.0-3.3. (2) DO lethal=2 is mislabeled - it is a behavioral AVOIDANCE/habitat-compression threshold (~2.3 mg/L), NOT a mortality LC50; nc_specific=true is justified for this NC datum. (3) DO saturating ~4 mg/L has NO primary support (admitted estimate) - treat as a modeling assumption. (4) pH 6.0 contradicts its source: croaker were cultured at 6.0-9.3 'with little effect on growth', so 6.0 is TOLERATED, not stressful - the 6.0/6.5 breakpoints are interpretive placeholders and pH is essentially non-limiting for this species. (5) NOTE the original-notes ~25% Gulf population-reduction-under-hypoxia figure could not be verified. ECOLOGICALLY the load-bearing limit is COLD: winter young-of-year kills drive recruitment; cold tolerance is SIZE- and SALINITY-dependent (increases with salinity; smaller individuals survive longer; Lankford & Targett 2001), and the relevant field cold limit is a sustained overwintering threshold (~3-4 C mean Jan-Feb) rather than the acute lab CTmin (~1 C). SALINITY optimum shifts ontogenetically (early juveniles ~5 ppt nurseries; eggs need >=30 ppt for buoyancy). REMINDER (project corrected-facts): croaker landings declines are NOT abundance declines - NC fishery-independent surveys show croaker remains among the most abundant estuarine fish. DO and pH modeled one-sided (more-is-better)."

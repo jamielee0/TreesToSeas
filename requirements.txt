@@ -1,0 +1,14 @@
+# Core (required)
+numpy>=1.24
+pandas>=2.0
+pyyaml>=6.0
+matplotlib>=3.7
+requests>=2.31
+scipy>=1.10
+openpyxl>=3.1          # read the 2025-2026 *.xlsx sensor files
+
+# Optional (external data sources — install when you wire them in)
+# erddapy>=2.2         # SECOORA ERDDAP (ModMon, Neuse River Estuary)
+# dataretrieval>=1.0   # USGS NWIS discharge (Fort Barnwell 02091814)
+# noaa-coops>=0.4      # NOAA CO-OPS water temperature (station 8656483)
+# scikit-learn>=1.3    # optional models for the validation step

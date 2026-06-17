@@ -1,0 +1,23 @@
+# Data (download with scripts/fetch_data.py — do not commit large files)
+data/raw/
+data/interim/
+data/processed/
+*.xlsx
+*.csv
+!config/*.csv
+
+# Pipeline run artifacts
+runs/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
