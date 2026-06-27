@@ -11,13 +11,16 @@ you get a continuous, predictive map of **when and where** each species is insid
 outside its survivable range — the sub-seasonal "squeeze" windows that a twice-a-year
 trawl survey structurally cannot resolve.
 
-The **proof-of-concept** validates the engine on the **eastern oyster** using the Duke
-Bass Connections oyster team's paired dataset (environmental sensors **and** observed
-oyster mortality/growth), then generalizes to the data-rich Neuse–Pamlico system.
+The engine is **validated** where it works (suitability predicts where Program 195 trawl
+species are caught; the Neuse bottom-water summer squeeze is real and ongoing) and is
+**honestly scoped** where it doesn't (it is not a stock-abundance or oyster-mortality
+predictor). See [`docs/results.md`](docs/results.md) for the numbers.
 
-> Full scientific rationale and the 8-week plan are in the proposal document
-> (`Trees_to_Seas_Proposal.docx`). The research workflow is modeled on *The AI
-> Scientist* (Lu et al., *Nature* 2026) — see [`docs/methodology.md`](docs/methodology.md).
+> **New here (incl. a fresh Claude session)? Read [`CLAUDE.md`](CLAUDE.md) first** — it maps
+> the whole project. Consolidated findings are in [`docs/results.md`](docs/results.md); the
+> scientific write-up is `Trees_to_Seas_Proposal.docx` (build: [`proposal/`](proposal/)).
+> The research workflow is modeled on *The AI Scientist* (Lu et al., *Nature* 2026) — see
+> [`docs/methodology.md`](docs/methodology.md).
 
 ## Quickstart
 

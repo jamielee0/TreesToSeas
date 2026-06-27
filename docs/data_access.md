@@ -1,5 +1,19 @@
 # Data access & automation — what's automated vs. what's on you
 
+> **Acquisition status (2026-06-27).** Most data is now in hand (see CLAUDE.md §5):
+> - **Public, automated:** ModMon via ERDDAP (1994–2021), USGS discharge, NOAA Beaufort
+>   temp, and Ty's oyster data — re-fetch anytime with `scripts/fetch_public_data.py` and
+>   `scripts/fetch_data.py`.
+> - **Program 195 catch:** obtained via the SEAMAP-SA portal (Jamie's account). Do **not**
+>   redistribute (their IP protocol). To re-pull, see the SEAMAP section below.
+> - **ModMon post-2021 (2022–2026):** received by email from **Jack Cheshire**
+>   (jcheshi@unc.edu, UNC Paerl Lab) as `ModMon NR/PS Sonde Data 2022-2026.xlsx` (now in
+>   `data/raw/`, loaded by `treestoseas/io/modmon_excel.py`). Sonde data is current; lab
+>   analyses lag to ~2024–25.
+> - **FerryMon:** PENDING from **Tony Whipple** — Neuse crossing 2019–mid-2024 (ferry then
+>   offline) and Pamlico crossing Apr-2025–present. Awaiting delivery (coordinated with Jack).
+> - Draft emails for all of the above are in `docs/outreach_emails.md`.
+
 Goal: automate everything that can be automated. The good news — **none of the
 programmatic sources need an API key or login.** The only manual steps are a couple
 of email requests for data that isn't posted publicly.
