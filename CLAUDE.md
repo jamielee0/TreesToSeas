@@ -116,6 +116,7 @@ Loaders for each are in `treestoseas/io/` (one module per source).
 | `run_pipeline.py` | the staged AI-Scientist-style pipeline on oyster data | journaled `runs/` |
 | `catch_vs_suitability.py` | per-tow HSI vs Program 195 catch | the headline validation |
 | `program195_analysis.py` | sharpened: AUC, within-year, seasonal split | Fig `suitability_validation.png` |
+| `headline_decomposition.py` | DO-missingness + complete-case + temp-baseline of the headline ρ | flounder clean (multi-axis); croaker/crab thermal |
 | `sensitivity.py` | ±15% envelope perturbation robustness | 100% positive |
 | `neuse_bottom_hypoxia.py` | surface vs bottom hypoxia by month (ModMon depth) | 44% bottom squeeze |
 | `extend_modmon.py` | merge ERDDAP + new sonde → 1994–2026 trend | squeeze persists, +6.9%/decade |
@@ -160,8 +161,18 @@ temp dir; `proposal/gen.js` is the preserved copy — keep it in sync if you reg
 
 ## 10. Open items / next steps
 
+- **Pipeline status (academic-research-skills 10-stage):** completed Stage 2.5 INTEGRITY
+  (PASS-WITH-WARNINGS) + Stage 3 REVIEW (MINOR_REVISION, 74/100) + Stage 4 REVISE (P0+P1) on
+  2026-06-27 — see `docs/stage2.5_integrity_and_stage3_review.md`. The proposal headline was
+  corrected (pooled ρ inflated by 39% DO-missingness → lead with flounder/within-year; see
+  `headline_decomposition.py` + `docs/results.md` §1a). **Next:** Stage 4.5 FINAL INTEGRITY →
+  Stage 5 FINALIZE → Stage 6 PROCESS SUMMARY. **P2 cleanups still open:** stale `species.yaml`
+  blue-crab caveat numbers, regenerate `modmon_annual_summary.csv`, `tolerance_table.md`
+  blue-crab breakpoints, Cadman & Weinstein p.208, APNEP year/URL, fill `[your name]` + bump
+  proposal version.
+- ~~Fold the "squeeze still happening + trending up (1994–2026)" finding into the proposal.~~
+  **Done** (proposal §5.6 + new Figure 3; +6.9%/decade, p=0.002).
 - **FerryMon** (pending from Tony Whipple): adds ferry-transect *spatial* coverage.
 - Bring the **Pamlico Sound 2022–26** data + the heatmap fully current (PS data is loaded).
-- Fold the "squeeze still happening + trending up (1994–2026)" finding into the proposal.
 - Longer-term: a **sex-/life-stage-/season-structured blue-crab** model (the correct fix).
 - Advisor sign-offs still open (proposal §10): scope, species list, HSI combiner, validation bar.

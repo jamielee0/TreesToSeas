@@ -8,6 +8,7 @@ const {
 const OUT = "C:/Users/pingp/Documents/fisheries/Trees_to_Seas_Proposal.docx";
 const FIG = "C:/Users/pingp/Documents/fisheries/data/processed/suitability_validation.png";
 const FIG2 = "C:/Users/pingp/Documents/fisheries/data/processed/neuse_bottom_hypoxia.png";
+const FIG3 = "C:/Users/pingp/Documents/fisheries/data/processed/modmon_extended_trend.png";
 const CONTENT_W = 9360; // US Letter, 1in margins
 
 // ---------- helpers ----------
@@ -70,8 +71,8 @@ body.push(new Paragraph({ spacing: { after: 60 }, children: [
 body.push(P([ I("Proof-of-concept proposal and modeling roadmap") ]));
 body.push(P([ B("Prepared for: "), T("Dr. Daniel Rittschof, Duke University Marine Laboratory") ]));
 body.push(P([ B("In collaboration with: "), T("the Duke Bass Connections oyster team (data via Ty; GitHub: oystersdukebc)") ]));
-body.push(P([ B("Prepared by: "), T("[your name]") ]));
-body.push(P([ B("Date: "), T("17 June 2026     "), B("Version: "), T("0.1 (companion to the treestoseas v0.1 repository)") ]));
+body.push(P([ B("Prepared by: "), T("Jamie Lee") ]));
+body.push(P([ B("Date: "), T("27 June 2026     "), B("Version: "), T("0.2 (companion to the treestoseas v0.2 repository)") ]));
 body.push(new Paragraph({ border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "2E5E8C", space: 2 } }, children: [] }));
 
 body.push(new Paragraph({ spacing: { before: 120 }, children: [ B("Contents") ] }));
@@ -87,19 +88,25 @@ body.push(P([
   T(": drive per-species physiological "), B("suitability envelopes"),
   T(" with high-frequency water-quality time series to map "),
   B("when and where"),
-  T(" each species is inside vs. outside its survivable range — resolving the sub-seasonal heat-and-hypoxia “squeeze” windows that a twice-a-year trawl survey structurally cannot capture."),
+  T(" each species is inside vs. outside its survivable range — resolving the sub-seasonal heat-and-hypoxia “squeeze” windows that a trawl survey sampled mainly in early summer and early fall structurally cannot capture."),
 ]));
 body.push(P([
   B("Why now, and why this is fundable: "),
   T("the proof-of-concept does not rest on a theoretical argument. It is "),
-  B("validated against real biology"),
+  B("validated against independent biology"),
   T(". The Duke Bass Connections oyster team has collected paired data — high-frequency environmental sensors (temperature, dissolved oxygen, salinity, pH, precipitation) "),
   I("and"),
-  T(" observed oyster mortality and growth — at working farm sites. That lets us test, directly, whether a mechanistic stress index predicts oyster survival. The engine is then generalized to the data-rich Neuse–Pamlico system."),
+  T(" observed oyster mortality and growth — at working farm sites, which let us test directly whether a mechanistic stress index predicts oyster survival. That paired test returned an "),
+  B("informative null"),
+  T(" (the tolerant oyster stayed within its adequate range at these well-flushed sites; see §5.3 and §5.6) — which usefully bounds the tool's scope. The validation that "),
+  I("held"),
+  T(" is independent and at the population scale: the same literature-calibrated index predicts "),
+  B("where"),
+  T(" trawl-survey species are actually caught across the Neuse–Pamlico system, and resolves a severe, intensifying bottom-water summer squeeze the survey cannot see (§5.5–5.6)."),
 ]));
 body.push(callout([
   B("Central hypothesis. "),
-  T("For estuarine species, sub-seasonal variation in physiological habitat suitability (temperature × salinity × dissolved oxygen) is large, spatially structured, and largely invisible to a twice-yearly survey; a continuous suitability/stress index built from existing high-frequency data will reveal recurring summer hypoxia-and-heat squeeze windows that better explain mortality and habitat loss than static, salinity-zone, single-species management."),
+  T("For estuarine species, sub-seasonal variation in physiological habitat suitability (temperature × salinity × dissolved oxygen) is large, spatially structured, and largely invisible to a survey sampled mainly twice a year; a continuous suitability/stress index built from existing high-frequency data will reveal recurring summer hypoxia-and-heat squeeze windows, and will predict where mobile demersal species are caught and when the bottom-water squeeze closes — information that static, salinity-zone, single-species management cannot resolve. (As the results below show, the index validates as a spatial and sub-seasonal habitat-stress lens; it is deliberately not advanced as a stock-abundance or mortality predictor.)"),
 ]));
 
 // 2. Background
@@ -107,7 +114,7 @@ body.push(H1("2. Background and motivation"));
 body.push(H2("2.1 Heavily managed, still declining"));
 body.push(P("NC regulates each species individually, partitioned by static salinity zones, and leans on fishery-independent trawl surveys sampled only a few times per year. The result is biomass estimates built on temporally sparse snapshots, while the conditions that actually determine survival — summer heat, hypoxia, drought-driven salinity spikes, post-rainfall stratification — vary on the scale of days."));
 body.push(H2("2.2 The Great Lakes cautionary parallel"));
-body.push(P("The Great Lakes lost numerous fish taxa (26 extirpated from at least one lake, four globally extinct) under cumulative stressors plus species-by-species management. Lake sturgeon collapsed around the 1880s–1920s and never recovered. The lesson is not a single cause but the failure of a management paradigm that ignored cumulative, interacting stressors — exactly the blind spot a dynamic suitability model is built to address."));
+body.push(P("The Great Lakes lost numerous fish taxa (26 extirpated from at least one lake, four globally extinct) under cumulative stressors plus species-by-species management. Lake sturgeon collapsed around the 1880s–1920s and never recovered. The lesson is not a single cause but the failure of a management paradigm that ignored cumulative, interacting stressors — exactly the blind spot a dynamic suitability model is built to address. We carry the Great Lakes as a cautionary analogy that motivates the approach, not as a mechanistic precedent for North Carolina."));
 body.push(H2("2.3 The “trees to seas” land-use drivers"));
 body.push(P("NC's coastal plain is forest on a ~25-year harvest rotation, and the state is a top-three hog producer with dense poultry operations; clearing and runoff drive siltation, nutrient loading, and summer hypoxia that smother oyster reefs and silt over spawning beds. These drivers motivate why suitability collapses occur where and when they do — they are the context, while the model focuses on the water-quality-to-physiology link."));
 body.push(H2("2.4 The real, defensible gap (an important correction)"));
@@ -116,17 +123,17 @@ body.push(callout([
   T("NC DMF Program 195 (the Pamlico Sound trawl survey) is "), B("stratified-random"),
   T(" and "), B("does record"),
   T(" surface/bottom temperature, salinity, dissolved oxygen, secchi (turbidity), and precipitation at every grid. The defensible, verifiable gap is "),
-  B("coarse temporal resolution (June and September only) and under-use of those covariates"),
+  B("coarse warm-season temporal resolution (effort concentrated in June and September, with only sparse July–August coverage) and under-use of those covariates"),
   T(" — not non-measurement. The whole proposal is built on that solid footing. (See Appendix A.)"),
 ]));
 
 // 3. Objectives
 body.push(H1("3. Objectives"));
-body.push(numItem("Lock the critique to the verified gap (twice-yearly snapshot resolution + covariate under-use), not the false “no covariates measured” claim."));
+body.push(numItem("Lock the critique to the verified gap (coarse warm-season snapshot resolution + covariate under-use), not the false “no covariates measured” claim."));
 body.push(numItem("Stand up a reproducible Python pipeline that ingests the oyster team's environmental + biological data with QC and daily resampling."));
 body.push(numItem("Compile a cited tolerance table (temperature, salinity, DO, pH min/optimum/max, plus degree-day base temperatures) for the focal species, flagging NC-specific vs. transferred values."));
 body.push(numItem("Implement per-species suitability envelopes f(T,S,DO,pH) → [0,1] combined into a geometric-mean Habitat Suitability Index, plus a separate degree-day phenology layer."));
-body.push(numItem("Validate the index against observed oyster mortality and growth (the headline result), and quantify the summer squeeze windows the snapshot survey misses."));
+body.push(numItem("Validate the index against independent biology — observed oyster mortality/growth at the farm sites (an informative null; see §5.5–5.6) and, as the load-bearing test, where species are caught in the Program 195 trawl survey — and quantify the summer squeeze windows the snapshot survey misses."));
 body.push(numItem("Package everything as a runnable, journaled repository so additional species, sites, and the Neuse–Pamlico data plug in later."));
 
 // 4. Data
@@ -162,9 +169,9 @@ body.push(callout([
 // 5. Approach
 body.push(H1("5. Approach and methods"));
 body.push(H2("5.1 Suitability envelopes and the Habitat Suitability Index"));
-body.push(P("Each environmental factor maps to a [0,1] suitability via a transparent trapezoidal curve defined by min / optimum-low / optimum-high / max thresholds. Factors are combined into a single Habitat Suitability Index (HSI) using the geometric mean, so that any one lethal factor (for example, DO → 0) drives the whole HSI to zero. This is what captures a true hypoxia/heat “squeeze”; an arithmetic mean would mask it. A Liebig minimum-factor combiner is also provided and compared. The model is deliberately mechanistic and interpretable — not a machine-learned species-distribution model — because interpretability, not raw fit, is the point."));
+body.push(P("Each environmental factor maps to a [0,1] suitability via a transparent trapezoidal curve defined by min / optimum-low / optimum-high / max thresholds. Factors are combined into a single Habitat Suitability Index (HSI) using the geometric mean, so that any one lethal factor (for example, DO → 0) drives the whole HSI to zero. This is what captures a true hypoxia/heat “squeeze”; an arithmetic mean would mask it. A Liebig minimum-factor combiner is also provided and compared. The model is deliberately mechanistic and interpretable — not a machine-learned species-distribution model — because interpretability, not raw fit, is the point. (The envelope set includes pH for the calcifying oyster, but the Program 195 spatial validation in §5.5 uses temperature, salinity, and dissolved oxygen only — pH is not recorded at trawl tows.)"));
 body.push(H2("5.2 Degree-days (phenology layer, kept honest)"));
-body.push(P("Degree-days predict the timing of development, spawning, and activity for cold-blooded animals and are well supported for pre-maturation growth (Neuheimer & Taggart 2007 found accumulated degree-days explained >92% of length-at-day variance across nine fish species). They are kept strictly separate from the survival envelope, because a plain degree-day sum breaks down near thermal extremes — upper-lethal limits and hypoxia are handled by the envelope, while degree-days only predict when favorable windows open."));
+body.push(P("Degree-days predict the timing of development, spawning, and activity for cold-blooded animals and are well supported for pre-maturation growth (Neuheimer & Taggart 2007 found accumulated degree-days explained >92% of length-at-day variance across nine fish species). They are kept strictly separate from the survival envelope, because a plain degree-day sum breaks down near thermal extremes — upper-lethal limits and hypoxia are handled by the envelope, while degree-days only predict when favorable windows open. Base temperatures are species-specific where published (e.g. 20 °C oyster spawning, 10.8 °C blue-crab molt) and explicit placeholders for southern flounder and Atlantic croaker, which have no published developmental base — flagged as such in the repository."));
 body.push(H2("5.3 Validation against observed biology (the payoff)"));
 body.push(P("For each census interval at a site we accumulate a stress load from the suitability time series and test whether it rank-correlates with observed oyster mortality. As reported in §5.5, this oyster-mortality test came back null — the tolerant oyster stayed within its adequate range at these well-flushed sites — so the load-bearing validation is the Program 195 spatial-occupancy result below, not oyster mortality. The continuous suitability series is also contrasted with documented low-DO periods (§5.6)."));
 body.push(H2("5.4 Tooling: Python"));
@@ -172,18 +179,24 @@ body.push(P("Recommended: Python. The machine-readable route to the generalizati
 
 body.push(H2("5.5 Results to date — what is already validated (and what is not)"));
 body.push(callout([
-  B("Headline result — independent, out-of-sample, and robust. "),
+  B("Headline result — a modest, consistent, literature-calibrated spatial signal. "),
   T("Using each tow's own bottom temperature, salinity, and dissolved oxygen with the "),
   I("literature-calibrated"),
-  T(" envelopes (never fit to catch data), the Habitat Suitability Index positively and very significantly predicts where all three trawl species are caught across 4,312 NC Program 195 tows (1987–2021): Atlantic croaker ρ = +0.20, blue crab +0.18, southern flounder +0.14 (all p < 1e-19; presence-AUC 0.55–0.59). The signal is "),
-  B("robust to envelope uncertainty"),
-  T(": under ±15% perturbation of every threshold (300 Monte-Carlo draws) the correlation stays positive in 100% of draws for all three species — so it does not depend on the exact (often transferred) numbers."),
+  T(" envelopes (never fit to catch data), the Habitat Suitability Index predicts "),
+  B("where"),
+  T(" trawl species are caught in the NC Program 195 survey. The honest, year-controlled effect is "),
+  B("modest but directionally consistent"),
+  T(", and southern flounder is the clean, load-bearing case: within years, flounder ρ (median) = 0.15, positive in 89% of years. Restricting to the 2,692 tows that actually measured all three factors — bottom dissolved oxygen is absent from 39% of tows (every pre-1996 tow), and the geometric-mean combiner averages over whatever factors are present — the per-tow correlations are flounder +0.15, Atlantic croaker +0.07, and blue crab +0.05. Effects are small (a few percent of variance; presence-AUC 0.55–0.59 — weak but consistent discrimination); the very small p-values reflect the large sample (≈2,700–4,300 tows), not a large effect, and tows are spatially clustered — so we report the robustness of the relationship's "),
+  B("sign and direction"),
+  T(", not its magnitude, and flag a mixed-effects / block-bootstrap treatment of spatial non-independence as planned work."),
 ]));
 body.push(P([
-  B("Species-specific honesty. "),
-  T("Controlling for year, the signal is robust for southern flounder (within-year median ρ = 0.15, positive in 89% of years), moderate and autumn-concentrated for croaker (0.11), and weak for blue crab (0.08, ~58% of years). The blue-crab result is "),
+  B("Does the envelope beat a thermometer? Only for flounder — and that is the point. "),
+  T("Against a raw bottom-temperature baseline, flounder's signal is genuinely multi-axis: its suitability is salinity-driven (HSI–temperature rank-correlation = −0.29), raw temperature alone is uninformative for flounder (ρ ≈ +0.01), and partialling temperature out leaves the signal intact (partial ρ = +0.16). Croaker's weaker signal is a temperature-shaped preference the trapezoidal envelope captures (partial ρ = +0.08, positive in ~63% of years), and blue crab is essentially flat (partial ρ = +0.05; raw temperature does as well or better). The blue-crab result is "),
   B("expected, not a defect"),
-  T(": 97% of tows fall inside the crab's salinity tolerance plateau and 82% inside its oxygen plateau, so those axes are mathematically flat across the well-mixed sound, and adult blue crab is a euryhaline, mobile, sex-segregated generalist that actively avoids hypoxic bottom water and buries below ~10 °C — its realized location is not set by a static bottom reading. We keep the crab envelope as a labeled physiological-tolerance layer and flag a sex-/life-stage-structured model as the correct future path. Flounder, pinned to low-salinity fine sediment, behaves exactly as the method intends."),
+  T(": 97% of tows fall inside the crab's salinity tolerance plateau and 82% inside its oxygen plateau, so those axes are mathematically flat across the well-mixed sound, and adult blue crab is a euryhaline, mobile, sex-segregated generalist that avoids hypoxic bottom water and buries below ~10 °C — its realized location is not set by a static bottom reading. We therefore keep the crab envelope as a labeled physiological-tolerance layer (not an occurrence predictor) and flag a sex-/life-stage-structured model as the correct future path. Flounder, pinned to low-salinity fine sediment, is the case the method is built for; croaker is a consistency check. The relationship's "),
+  B("sign is robust to envelope uncertainty"),
+  T(": under ±15% perturbation of every threshold (300 Monte-Carlo draws) the pooled correlation stays positive in 100% of draws for all three species."),
 ]));
 body.push(new Paragraph({
   alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 },
@@ -195,14 +208,14 @@ body.push(new Paragraph({
   })],
 }));
 body.push(P([
-  I("Figure 1. Independent validation: fraction of Program 195 tows where each species was caught, by habitat-suitability decile (suitability computed from each tow's own bottom T/S/DO using the literature-calibrated envelopes). Occurrence rises with modeled suitability for all three species. Data: SEAMAP-SA Pamlico Sound Survey (NC DMF), used under the SEAMAP-SA Intellectual Property Protocol — not for redistribution."),
+  I("Figure 1. Independent validation: fraction of Program 195 tows where each species was caught, by habitat-suitability decile (suitability computed from each tow's own bottom T/S/DO using the literature-calibrated envelopes, never fit to catch). Occurrence rises with modeled suitability for all three species. The ρ and AUC printed in each panel are pooled over all 1987–2021 tows; as the text explains, the honest year-controlled and complete-oxygen correlations are lower for croaker and blue crab, and the signal is genuinely multi-factor only for southern flounder. Data: SEAMAP-SA Pamlico Sound Survey (NC DMF), used under the SEAMAP-SA Intellectual Property Protocol — not for redistribution."),
 ]));
 
 body.push(H2("5.6 The summer squeeze the survey can't see"));
 body.push(P([
-  T("The model's central claim — that sub-seasonal, bottom-water stress is large and survey-blind — is borne out directly by depth-resolved ModMon profiles (1994–2021). In the Neuse River estuary, "),
+  T("The model's central claim — that sub-seasonal, bottom-water stress is large and survey-blind — is borne out directly by depth-resolved ModMon profiles. In the Neuse River estuary, "),
   B("bottom water is hypoxic (DO < 2 mg/L) in 44% of warm-season profiles versus 0.5% at the surface"),
-  T("; it peaks in August (54% of bottom profiles; median bottom DO 1.5 mg/L; modeled croaker bottom-habitat suitability → 0) and is worst in July–August, between the survey's June and September visits (51% vs 37%). The surface looks pristine while the bottom — where demersal species live — suffocates. This is measured dissolved oxygen, in the survey's own system, with no model assumptions."),
+  T("; it peaks in August (54% of bottom profiles; median bottom DO 1.5 mg/L; modeled croaker bottom-habitat suitability → 0) and is worst in July–August. The trawl survey samples predominantly in June and September (3,715 of 4,417 tows in 1987–2021), with only sparse opportunistic July–August coverage (128 tows) — so the hypoxia peak falls in a systematic sampling gap (bottom hypoxia is 51% in July–August versus 37% in June and September). The surface looks pristine while the bottom — where demersal species live — suffocates. This is measured dissolved oxygen, in the survey's own system, with no model assumptions."),
 ]));
 body.push(new Paragraph({
   alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 },
@@ -215,6 +228,24 @@ body.push(new Paragraph({
 }));
 body.push(P([
   I("Figure 2. Neuse bottom- vs surface-water hypoxia by month (depth-resolved ModMon, 1994–2021). Bottom-water hypoxia peaks in July–August — between the June and September survey windows. Data: UNC ModMon via SECOORA ERDDAP."),
+]));
+body.push(P([
+  B("The squeeze is current and intensifying. "),
+  T("Extending the same depth-resolved monitoring with the UNC Paerl Lab's post-2021 sonde data (7,681 Neuse bottom casts, 1994–2026) shows the summer squeeze has not eased: recent full summers run 56% (2022), 41% (2023), 46% (2024), and 47% (2025) bottom-hypoxic, around the 43% historical (1994–2021) mean. Bottom-water hypoxia is "),
+  B("trending upward at +6.9 percentage points per decade"),
+  T(" (1994–2025; p = 0.002, R² = 0.28). This is not a splice artifact: on the homogeneous 1994–2021 ERDDAP record alone the trend is steeper (+9.0%/decade, p = 0.001), and the newer sonde reads lower, not higher — so the long-term signal is, if anything, conservative. The condition the survey under-samples is getting worse — which is exactly why sub-seasonal, depth-resolved monitoring is the right investment now."),
+]));
+body.push(new Paragraph({
+  alignment: AlignmentType.CENTER, spacing: { before: 120, after: 60 },
+  children: [new ImageRun({
+    type: "png", data: fs.readFileSync(FIG3),
+    transformation: { width: 560, height: 205 },
+    altText: { title: "Neuse bottom hypoxia trend", name: "trend",
+      description: "Neuse summer bottom-water hypoxia by year 1994-2026 with upward trend" },
+  })],
+}));
+body.push(P([
+  I("Figure 3. Neuse summer bottom-water hypoxia by year (1994–2026): ERDDAP CTD casts (1994–2021) plus UNC Paerl-Lab sonde (2022–2026), same monitoring program. The fraction of warm-season bottom profiles below 2 mg/L trends upward (+6.9%/decade, p = 0.002, R² = 0.28). Data: UNC ModMon via SECOORA ERDDAP + UNC Paerl Lab."),
 ]));
 body.push(callout([
   B("Honest scope — what the model does NOT do. "),
@@ -266,7 +297,7 @@ body.push(H1("8. Deliverables"));
   "A reproducible Python repository (treestoseas v0.1): ingestion → QC → HSI → degree-days → validation → figures, journaled per run.",
   "A cited species tolerance/parameter table with NC-specific vs. transferred values flagged.",
   "A tested HSI module (geometric-mean envelopes) and a separate degree-day module.",
-  "The headline figure set: dynamic when/where suitability-vs-stress maps with observed oyster mortality overlaid.",
+  "The headline figure set: the spatial suitability-vs-catch validation, the depth-resolved when/where squeeze maps, and the 1994–2026 bottom-hypoxia trend.",
   "A corrected-facts crib sheet (Appendix A).",
   "An advisor packet: open questions and a data-coordination note for the oyster team; a generalization/validation plan for the Neuse–Pamlico.",
 ].forEach(d => body.push(bullet(d)));
@@ -314,7 +345,7 @@ body.push(makeTable([
   ["Sturgeon collapsed in the 1960s–70s", "Lake sturgeon collapsed ~1880s–1920s; ~1% of historic abundance today. The 1960s–70s is when blue pike went extinct."],
   ["Cisco/whitefish lost mainly to logging siltation", "Primary drivers: overfishing + invasives; siltation contributing, not the lead cause, and not attributed to logging."],
   ["2nd-largest estuary in the world", "“2nd-largest estuarine complex in the lower 48” (APNEP). Pamlico Sound is the largest embayed estuary in the world — keep distinct."],
-  ["Program 195 ignores salinity/rainfall/turbidity/temperature", "FALSE. Program 195 is stratified-random and records temp, salinity, DO, secchi (turbidity), precipitation at every grid. Real critique: twice-yearly resolution + covariate under-use."],
+  ["Program 195 ignores salinity/rainfall/turbidity/temperature", "FALSE. Program 195 is stratified-random and records temp, salinity, DO, secchi (turbidity), precipitation at every grid. Real critique: warm-season effort concentrated in June and September (only ~128 of 4,417 tows fall in July–August, the hypoxia peak) + covariate under-use — not non-measurement."],
   ["NC #2 in hog production", "#3 in total hog inventory (Iowa, Minnesota ahead); ~#2 in the breeding herd. State metric + year."],
   ["Hogs = #1 nutrient-pollution source in NC", "Poultry has overtaken swine (~3× the N, ~6× the P; NC DEQ 2017)."],
   ["Croaker/spot “crashed ~97%”", "That is a landings decline, not abundance — NC surveys show croaker/spot remain among the most abundant estuarine fish."],
@@ -328,7 +359,7 @@ body.push(H1("References"));
 [
   "Lu, C., Lu, C., Lange, R. T., Yamada, Y., Hu, S., Foerster, J., Ha, D., & Clune, J. (2026). Towards end-to-end automation of AI research. Nature, 651, 914–919. https://doi.org/10.1038/s41586-026-10265-5",
   "Neuheimer, A. B., & Taggart, C. T. (2007). The growing degree-day and fish size-at-age: the overlooked metric. Canadian Journal of Fisheries and Aquatic Sciences, 64(2), 375–385.",
-  "Albemarle-Pamlico National Estuary Partnership (APNEP). Comprehensive Conservation and Management Plan.",
+  "Albemarle-Pamlico National Estuary Partnership (APNEP). Comprehensive Conservation and Management Plan (1994; rev. 2012, 2025). https://apnep.nc.gov/resources/publications-and-reports/comprehensive-conservation-and-management-plan",
   "SEAMAP-South Atlantic / NC Division of Marine Fisheries. Pamlico Sound Survey (Program 195), Abundance & Biomass extract, 1987–2021, obtained via the SEAMAP-SA Data Portal (seamap.org/data-portal) under the SEAMAP-SA Intellectual Property Protocol. Used for the Figure 1 validation; not redistributed.",
   "NC Department of Environmental Quality (2017). Basinwide Manure Production Report.",
 ].forEach(r => body.push(P(r)));

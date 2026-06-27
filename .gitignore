@@ -18,6 +18,9 @@ venv/
 .pytest_cache/
 .ipynb_checkpoints/
 
+# Node (proposal build — keep package.json + package-lock.json, ignore deps)
+node_modules/
+
 # OS
 .DS_Store
 Thumbs.db

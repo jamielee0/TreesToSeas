@@ -12,9 +12,9 @@ Each factor is a trapezoidal membership function `[lo_zero, lo_one, hi_one, hi_z
 | Eastern oyster | salinity_ppt | [2, 14, 30, 40] | NC-specific | NC CHPP 2005 (opt 14-30 ppt, Castagna & Chanley 1973); adult range 2-40 ppt LA HSI |
 | Eastern oyster | DO_mgL | [1, 4, 1000, 2000] | NC-specific (lethal); transferred (saturating) | Lethal ~1 mg/L NC CHPP 2005; saturating ~4 mg/L lab rule-of-thumb (Keppel et al. 2016) |
 | Eastern oyster | pH | [7.5, 8.0, 100, 200] | Transferred | Waldbusser et al. 2011 Estuaries & Coasts 34:221-231 (Chesapeake/lab) |
-| Blue crab (*Callinectes sapidus*) | temp_C | [3, 24, 28, 36] | Transferred | Rome et al. 2005 JEMBE 319:129-145 (lower ~3 C, Chesapeake); opt 24-28 C Leffler 1972 / TPC 2022; upper ~36 C conservative sustained limit (Tagatz 1969) |
+| Blue crab (*Callinectes sapidus*) | temp_C | [10, 20, 30, 36] | Transferred (NC-grounded lower shoulder) | Active-occurrence envelope: lower shoulder ~10 C = growth cessation + sediment burial/dormancy (Cadman & Weinstein 1988 JEMBE 121:193-208; Epifanio 2019); opt ~15-30 C; upper ~36 C conservative sustained limit (Tagatz 1969) |
 | Blue crab | salinity_ppt | [0, 3, 30, 60] | Transferred | Rome et al. 2005 (opt ~3-15 psu); Sci. Total Environ. 2024 (CTmin 0 / CTmax 62.4 psu) |
-| Blue crab | DO_mgL | [2, 5, 1000, 2000] | Transferred | Das & Stickle 1993; Brill et al. 2015 (avoidance ~2 mg/L; non-limiting >~5 mg/L) |
+| Blue crab | DO_mgL | [2.4, 4, 1000, 2000] | Transferred (NC-grounded avoidance shoulder) | Behavioral-avoidance shoulder ~2.4-4 mg/L (Selberg et al. 2001 NC Neuse; Bell et al. 2003/2009); resting-adult Pcrit far lower ~1.3-1.6 (Das & Stickle 1993; Brill et al. 2015) |
 | Blue crab | pH | [7.3, 7.9, 100, 200] | Transferred | Tankersley/Miller et al. 2018 PLOS ONE 13:e0208629 (larval; control 7.91-7.94) |
 | Southern flounder (*Paralichthys lethostigma*) | temp_C | [2, 18, 25, 35] | NC-specific (lower/opt); transferred (upper) | Taylor et al. 2000 JWAS 31(1):69-72 + Williams & Deubler 1968 (NC, 2-4 C); FishBase / Luckenbach et al. 2007 (opt 23-25 C, NC); upper ~35 C occurrence-derived |
 | Southern flounder | salinity_ppt | [0, 5, 15, 36] | NC-specific (lower/opt); transferred (upper) | Flowers et al. 2019 NC DMF (thrive 5-15 ppt); Smith et al. 1999 (0-10 ppt ~100% survival); upper ~36 ppt occurrence/culture |

@@ -25,6 +25,32 @@ year trends), **flounder is robust**, croaker moderate/autumn-concentrated, **bl
 — and that's expected** (see §7). Flounder, pinned to low-salinity fine sediment, behaves
 exactly as the method intends.
 
+### 1a. Honest decomposition — DO-missingness, complete-case, and a temperature baseline (added 2026-06-27)
+**Script:** `headline_decomposition.py` → `headline_decomposition.csv`
+
+The pooled ρ above blends two eras. Bottom DO is **missing from 39.1% of the 4,417 tows
+(100% of pre-1996 tows)**, and the geometric-mean combiner (`np.nanmean` over log-suitability)
+averages over whatever factors are present — so DO-less tows contribute a 2-factor
+(temp+salinity) HSI. This **inflates the croaker/blue-crab pooled numbers** (a Simpson's
+paradox). The honest, verified picture (complete-case n = 2,692):
+
+| Species | pooled ρ (n=4,312) | complete-case ρ (DO present, n=2,692) | raw bottom-temp ρ | HSI~temp ρ | partial ρ(HSI~CPUE \| temp) |
+|---|---|---|---|---|---|
+| Southern flounder | +0.140 | **+0.150** | +0.008 | −0.285 | **+0.159** |
+| Atlantic croaker | +0.202 | +0.074 | −0.007 | +0.354 | +0.081 |
+| Blue crab | +0.177 | +0.047 | +0.106 | +0.020 | +0.046 |
+
+**Reading:** **flounder is the clean, load-bearing multi-axis case** — its HSI is salinity-driven
+(anti-correlated with temperature), raw temperature alone is uninformative, and the signal
+survives partialling temperature out. **Croaker** is a weak temperature-shaped preference (the
+trapezoidal envelope adds a little over a raw thermometer). **Blue crab** is plateau-flat — raw
+temperature does as well or better — kept as a labeled tolerance layer, not an occurrence
+predictor. The **within-year medians** in §1 (flounder 0.15/89%, croaker 0.11, crab 0.075) are
+immune to the pooling artifact and remain the primary year-controlled statistic. This
+decomposition was surfaced by the Stage 2.5/3 integrity+review pass
+(`docs/stage2.5_integrity_and_stage3_review.md`) and is the basis for the revised §5.5 of the
+proposal (lead with flounder + within-year; disclose the DO-missingness).
+
 ## 2. Robustness to envelope uncertainty
 **Script:** `sensitivity.py` → `sensitivity_summary.csv`, `sensitivity.png`
 
@@ -93,7 +119,7 @@ oyster mortality.
 ## 7. Blue crab — weak within-year is EXPECTED (resolved via research workflow)
 A dedicated research workflow verified: re-tuning won't help, because **97% of tows sit in
 the crab salinity plateau and 82% in the DO plateau** (Pamlico is well-mixed, median bottom
-DO 6.7 mg/L), so those axes are mathematically flat across the surveyed water; and adult
+DO 6.6 mg/L), so those axes are mathematically flat across the surveyed water; and adult
 blue crab is euryhaline, mobile, sex-segregated, avoids hypoxic bottom water, and buries
 <10 °C. Two NC-grounded realism refinements were applied (temp shoulder→10 °C; DO
 shoulder→2.4–4 mg/L; Selberg 2001, Bell et al. 2003/2009, Cadman & Weinstein 1988). Kept as
