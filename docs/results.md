@@ -51,6 +51,34 @@ decomposition was surfaced by the Stage 2.5/3 integrity+review pass
 (`docs/stage2.5_integrity_and_stage3_review.md`) and is the basis for the revised §5.5 of the
 proposal (lead with flounder + within-year; disclose the DO-missingness).
 
+### 1b. Spatial-robustness of the complete-oxygen headline (added 2026-06-27)
+**Script:** `spatial_robustness.py` → `spatial_robustness_summary.csv`, `spatial_robustness.png`
+
+The p<1e-19 in §1 is an n-artifact: tows are clustered by survey grid stratum and by year, so 2,692
+tows are not 2,692 independent observations. Two treatments on the complete-oxygen set — a **cluster
+block-bootstrap** of ρ(HSI,CPUE) and a **mixed-effects logistic GLMM** `presence ~ HSI + (1|tile) +
+(1|year)` (74 ~0.1° tiles, 5 grid strata, 26 years, 129 grid×year blocks; raw STATIONCODE is
+near-unique, 1,028/2,692, so it cannot serve as the cluster):
+
+| Species | ρ | naive 95% CI | year-block | grid×year-block | GLMM HSI log-odds (95% CI)\* |
+|---|---|---|---|---|---|
+| Southern flounder | +0.150 | [+0.11,+0.19] | [+0.08,+0.22] | **[+0.08,+0.22]** | +0.82 [+0.72,+0.91] |
+| Atlantic croaker | +0.074 | [+0.04,+0.11] | [+0.01,+0.14] | **[+0.01,+0.14]** | +1.00 [+0.90,+1.12] |
+| Blue crab | +0.047 | [+0.01,+0.09] | [−0.04,+0.13] | **[−0.03,+0.12]** | +0.68 [+0.59,+0.77] |
+
+**Reading:** **flounder's abundance rank-correlation is robust** — its CI clears zero under every
+scheme including the conservative grid×year block-bootstrap. **Croaker** is positive but **marginal**
+(clustered lower bound ≈ +0.006–0.009). **Blue crab's abundance correlation is NOT distinguishable
+from zero** once temporal clustering is honored (CI crosses 0) — independent confirmation that crab
+is a tolerance layer, not an occurrence predictor. \*The GLMM shows a positive HSI effect on
+*occurrence* (presence) for all three even with spatial+temporal random intercepts — but variational-
+Bayes credible intervals are known to be optimistically narrow, so the GLMM corroborates **direction**
+(higher suitability → higher occurrence odds) while the **block-bootstrap is the conservative test of
+record** for effect magnitude. Presence (weak crab occurrence tendency) and graded abundance (no
+robust crab signal) measure different things and are mutually consistent for a mobile generalist.
+This delivers the "mixed-effects / block-bootstrap" treatment the revised proposal §5.5 had flagged
+as planned work.
+
 ## 2. Robustness to envelope uncertainty
 **Script:** `sensitivity.py` → `sensitivity_summary.csv`, `sensitivity.png`
 
