@@ -34,7 +34,15 @@ def load_modmon_excel(path, system):
     """
     df = pd.read_excel(path, sheet_name="Data")
     out = pd.DataFrame()
-    out["datetime"] = pd.to_datetime(df["Date"], errors="coerce")
+    # 'Date' is date-only (midnight); the actual cast time is in 'YSI_Time'. Combine them
+    # so datetime carries the real time-of-day (needed for sub-day matching, e.g. against
+    # FerryMon); day-level analyses are unaffected.
+    day = pd.to_datetime(df["Date"], errors="coerce").dt.normalize()
+    if "YSI_Time" in df.columns:
+        tod = pd.to_timedelta(df["YSI_Time"].astype(str), errors="coerce").fillna(pd.Timedelta(0))
+        out["datetime"] = day + tod
+    else:
+        out["datetime"] = day
     out["system"] = system
     out["station"] = df["Station"].astype(str)
     out["layer"] = df["Depth"].map({"S": "surface", "B": "bottom"})

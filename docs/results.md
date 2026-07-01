@@ -177,3 +177,70 @@ trends ~**−2.4 days/decade** (earlier; warming-consistent, modest).
 Neuse croaker HSI by station (upstream→downstream) × month, surface vs bottom. Surface stays
 suitable year-round; **bottom collapses Jun–Sep** through the mid/lower estuary (Aug median
 ≈ 0). The dynamic "when/where" map of the squeeze.
+
+## 11. FerryMon underway surface data (loaded, QC'd, cross-validated)
+**Loader:** `treestoseas/io/ferrymon.py` · **QC:** `ferrymon_qc.py` · **Cross-validation:**
+`ferrymon_vs_modmon.py` → `ferrymon_vs_modmon_{pairs,summary}.csv`, `ferrymon_vs_modmon.png`
+(delivered by Tony Whipple 2026-07-01; **not** yet folded into the proposal — this is the
+next research iteration, the *spatial* surface layer.)
+
+Two ferry-of-opportunity files, ~30-s underway (engine-intake = **surface**) YSI-sonde tracks:
+`ferrymon_NR_2019_2024.csv` (993k rows) and `ferrymon_PS_2025_2026.xlsx` (750k rows). After QC,
+**993,192 + 749,725 rows** survive (only 292 + 410 dropped, all missing-GPS).
+
+**Ingest/QC findings (full raw→clean audit + adversarial review):**
+- **The "NR" file is 3 ferries, not 1.** By GPS: Neuse Cherry Branch–Minnesott **88.4%**, Cape
+  Fear Southport–Fort Fisher **6.6%**, Pamlico River Bayview–Aurora **4.9%**. The loader labels
+  each row's `route`/`system`; **never pool them.** (0 valid-fix rows fall outside the boxes.)
+- Masks: DO negatives → NaN (an earlier clamp to 0 fabricated hypoxia from cool-season drift);
+  PS `pH==0` sentinel (35% of PS rows) + out-of-range pH; negative turbidity/chl; dead
+  `optical_do` dropped. `depth_m` = intake depth in NR (~0.1 m) but sounder depth in PS
+  (median 8.5 m) — untrusted metadata; `layer='surface'` for both.
+
+### 11a. Cross-validation vs ModMon — which FerryMon variables can we trust? (the gate)
+**57 co-located surface casts** matched FerryMon to ModMon within ≤3 km & ±90 min: ModMon
+**Marker 9 (ModMon 120)** sits ~0.5 km on the Neuse ferry line (ERDDAP 2019–21 + sonde 2022–24);
+**PS5/6/8** sit 0.2–0.5 km on the Pamlico line (sonde 2025–26). Verdicts are robust across
+radius {1.5,3,5} km × window {30,60,90} min, bootstrap CIs, and a 4-lens adversarial review.
+*(Found + fixed en route: `modmon_excel.py` was dropping the sonde cast time to midnight — it
+now uses `YSI_Time`.)*
+
+| Variable | Verdict | Evidence (bias = FerryMon − ModMon) |
+|---|---|---|
+| **Salinity** | ✅ **Reliable — use freely** | \|bias\| < 0.3 ppt, r 0.91–0.97, CI includes 0 |
+| **Temperature** | ⚠️ **Relative/spatial only** (warm-biased) | +0.9 °C Neuse (r .99); +4 °C Pamlico, cold-amplified (r .99). A real intake/engine warm offset → bias-correct before absolute use |
+| **Dissolved O₂ / hypoxia** | ❌ **Do NOT use absolute DO** | Neuse: −3.0 mg/L, **uncorrelated** (r .22; sign test 39/44 neg, p<1e-6), erratic (year-clustered impossible negatives; sometimes reads *above* ModMon) → intermittently faulty probe. Pamlico: agrees (−0.11) **but only in cool/oxic water over ~5 days — never tested at hypoxia** |
+| **pH** | ❌ Unusable | probe-off sentinels + spurious highs |
+
+**Bottom line:** FerryMon's trustworthy contribution to this project is **spatial salinity
+structure** (reliable) and **relative temperature patterns** (bias-correctable) across the
+estuary width — **not** surface DO or a surface-hypoxia rate. This retroactively confirms the
+choice to *not* quote a FerryMon "surface hypoxia %": the Neuse DO stream is a faulty sensor,
+and ModMon shows that surface water at Marker 9 is steadily 6.6–12.2 mg/L (never hypoxic in the
+matched pairs) — the bottom-water squeeze (§3–4, §10) remains the real signal.
+
+### 11b. Surface-salinity transect maps (the validated spatial layer)
+**Script:** `ferrymon_transect.py` → `ferrymon_transect.png`, `ferrymon_transect_summary.csv`
+
+Using only the cross-validated variable (salinity), the ferry's surface field is mapped along each
+crossing (position = projection onto the crossing's principal axis) × month, and translated into
+each species' salinity-only suitability (the `species.yaml` trapezoidal envelopes). Two distinct,
+honest contributions emerge:
+
+- **Neuse — a *temporal*, not spatial, contribution.** Surface salinity is nearly uniform *across*
+  the ~3 km crossing (the ferry runs perpendicular to the river's longitudinal salinity gradient),
+  so all species' salinity envelopes are met across the width (croaker/crab/flounder HSI≈1.0, oyster
+  ≈0.82 at ~12 ppt). But it swings hard *in time* — monthly means **6.5 (Feb) → 15.0 (Aug) ppt**,
+  interannual year-means **0.8 → 15.2 ppt** (overall 0.3–19.1) — the sub-seasonal/interannual
+  salinity variation the twice-yearly survey and monthly ModMon casts under-sample.
+- **Pamlico Sound — a *spatial* contribution.** A real across-sound salinity gradient (**~22 → 30
+  ppt**) differentiates habitat: **southern flounder** (low-salinity optimum 5–15 ppt) is only
+  marginally suitable and improves toward the fresher end (salinity-HSI **0.30 → 0.65**, suitable in
+  just **44%** of transect bins), while croaker (0.82→0.96), blue crab and oyster stay ~1.0. This is
+  the "where across the estuary is a species' salinity envelope met" map that fixed stations cannot
+  give.
+
+**Scope reminder:** this is a *salinity* habitat lens (the validated axis). DO/absolute-temperature
+are excluded by design (§11a), and the envelopes are single-factor salinity, not the full HSI — so
+these are salinity-tolerance maps, not survival maps. Next candidate step: add a bias-corrected
+*relative* temperature layer, and/or overlay Program 195 catch positions on the PS gradient.

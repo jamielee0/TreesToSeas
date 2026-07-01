@@ -10,8 +10,11 @@
 >   (jcheshi@unc.edu, UNC Paerl Lab) as `ModMon NR/PS Sonde Data 2022-2026.xlsx` (now in
 >   `data/raw/`, loaded by `treestoseas/io/modmon_excel.py`). Sonde data is current; lab
 >   analyses lag to ~2024–25.
-> - **FerryMon:** PENDING from **Tony Whipple** — Neuse crossing 2019–mid-2024 (ferry then
->   offline) and Pamlico crossing Apr-2025–present. Awaiting delivery (coordinated with Jack).
+> - **FerryMon:** RECEIVED 2026-07-01 from **Tony Whipple** — `ferrymon_NR_2019_2024.csv`
+>   (Neuse crossing 2019–mid-2024; ferry then offline) and `ferrymon_PS_2025_2026.xlsx`
+>   (Pamlico Sound crossing Apr-2025–present). Now in `data/raw/`, loaded by
+>   `treestoseas/io/ferrymon.py`. NOTE: the "NR" file also carries Cape Fear (Southport–Fort
+>   Fisher) and Pamlico River (Bayview–Aurora) crossings — the loader labels routes by GPS.
 > - Draft emails for all of the above are in `docs/outreach_emails.md`.
 
 Goal: automate everything that can be automated. The good news — **none of the
@@ -26,7 +29,7 @@ of email requests for data that isn't posted publicly.
 | SECOORA ERDDAP — ModMon (Neuse–Pamlico) | No (public) | ✅ Fully | `treestoseas.io.erddap` (verified live) |
 | USGS NWIS — discharge (Fort Barnwell) | No (public) | ✅ Fully | `treestoseas.io.usgs` (`pip install dataretrieval`) |
 | NOAA CO-OPS — water temp (Beaufort) | No (public) | ✅ Fully | `treestoseas.io.noaa_coops` (plain `requests`) |
-| FerryMon continuous ferry-track data | n/a | ❌ Manual | **Email UNC Paerl Lab** (see below) |
+| FerryMon continuous ferry-track data | n/a | ✅ Received | Delivered by Tony Whipple 2026-07-01 → `data/raw/ferrymon_*` |
 | ModMon data **after Dec 2021** | n/a | ❌ Manual | **Email UNC Paerl Lab** |
 | NC Program 195 catch/abundance (Pamlico Sound Survey) | Free account | ⚠️ Self-service | **SEAMAP-SA Data Portal** (register + agree to citation protocol → online query). *Only needed for the optional catch-vs-suitability comparison.* |
 | Tolerance-parameter papers (full text) | Mostly free | ✅ Mostly | Values + citations already captured in `species.yaml`. Key sources are open (NOAA memos, NC CHPP, PLOS ONE, SEDAR); a few paywalled → Duke library/VPN |

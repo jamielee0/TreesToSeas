@@ -103,7 +103,7 @@ the non-public files (Program 195 extract, ModMon 2022–26 Excel) must be re-ob
 | **ModMon (post-2021, NEW)** | `modmon_NR_2022_2026.xlsx`, `modmon_PS_2022_2026.xlsx` | 2022–2026, S/B labeled | **Paerl Lab (Jack Cheshire)** — emailed |
 | USGS discharge | `usgs_neuse_fort_barnwell_discharge.csv` | 1996–2026 | USGS NWIS (public) |
 | NOAA water temp (Beaufort) | `noaa_beaufort_8656483_water_temp.csv` | 2000–2026 hourly | NOAA CO-OPS (public) |
-| FerryMon | — | **pending** | Tony Whipple (Neuse 2019–24; Pamlico 2025–present) — awaiting delivery |
+| **FerryMon (NEW)** | `ferrymon_NR_2019_2024.csv`, `ferrymon_PS_2025_2026.xlsx` | 2019–2024 (Neuse) + 2025–2026 (Pamlico Sound), surface, ~30-s underway | **Tony Whipple** — delivered 2026-07-01 |
 
 Loaders for each are in `treestoseas/io/` (one module per source).
 
@@ -125,6 +125,9 @@ Loaders for each are in `treestoseas/io/` (one module per source).
 | `snapshot_gap.py` | high-freq oyster-site DO dynamics vs twice-yearly cadence | diel swings, site contrast |
 | `phenology.py` | GDD spawning window + interannual trend | window ~day 140; −2.4 d/decade |
 | `suitability_heatmap.py` | Neuse croaker HSI station×month, surface vs bottom | bottom collapses Jun–Sep |
+| `ferrymon_qc.py` | raw→clean QC/EDA for the FerryMon underway files | 3 routes in "NR" file; route split + sentinel masks |
+| `ferrymon_vs_modmon.py` | cross-validate FerryMon surface vs ModMon surface (co-located) | salinity ✓, temp warm-biased, **DO unusable** |
+| `ferrymon_transect.py` | surface-salinity transect maps + salinity-HSI per species | Neuse temporal; PS spatial gradient (flounder marginal) |
 
 ## 7. How to run
 
@@ -172,7 +175,20 @@ temp dir; `proposal/gen.js` is the preserved copy — keep it in sync if you reg
   proposal version.
 - ~~Fold the "squeeze still happening + trending up (1994–2026)" finding into the proposal.~~
   **Done** (proposal §5.6 + new Figure 3; +6.9%/decade, p=0.002).
-- **FerryMon** (pending from Tony Whipple): adds ferry-transect *spatial* coverage.
+- **FerryMon** (delivered 2026-07-01 by Tony Whipple): loaded via `treestoseas/io/ferrymon.py`
+  (QC'd by `scripts/ferrymon_qc.py`; ~1.7M surface underway rows). Adds ferry-transect *spatial*
+  coverage. **Caveat:** the "NR" file bundles 3 ferry routes (Neuse 88% / Cape Fear 7% / Pamlico
+  River 5%) — the loader labels each by GPS; keep them separate.
+  **Cross-validated vs ModMon** (`ferrymon_vs_modmon.py`, 57 co-located casts; see `docs/results.md`
+  §11a): **salinity reliable**, **temperature warm-biased** (relative/spatial only), **absolute DO /
+  surface hypoxia NOT usable** (Neuse DO probe erratic; Pamlico DO validated only in cool/oxic water).
+  So FerryMon's usable contribution is spatial **salinity** + relative temperature — **not** DO.
+  (En route, fixed `modmon_excel.py` dropping sonde cast time to midnight — now uses `YSI_Time`.)
+  **Salinity transect maps built** (`ferrymon_transect.py`, `docs/results.md` §11b): Neuse adds a
+  *temporal* salinity signal (seasonal/interannual swings 0.8–15.2 ppt across a laterally-uniform
+  crossing); Pamlico Sound adds a *spatial* gradient (22→30 ppt) where southern flounder's
+  low-salinity optimum is only marginally met. **Next candidates:** bias-corrected relative-temp
+  layer; overlay Program 195 catch on the PS salinity gradient; fold into the proposal.
 - Bring the **Pamlico Sound 2022–26** data + the heatmap fully current (PS data is loaded).
 - Longer-term: a **sex-/life-stage-/season-structured blue-crab** model (the correct fix).
 - Advisor sign-offs still open (proposal §10): scope, species list, HSI combiner, validation bar.
